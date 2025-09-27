@@ -89,9 +89,11 @@
             {% endif %}
             {% if user.is_authenticated %}
             <a href="{% url 'dashboard_view' %}" tabindex="0">Tworzenie projektu</a>
-            <a href="{% url 'bachelors_store' %}" tabindex="0">Moje projekty</a>
+
+            {% comment %} widok nie gotowy {% endcomment %}
+            {% comment %} <a href="{% url 'bachelors_store' %}" tabindex="0">Moje projekty</a> {% endcomment %}
             {% endif %}
-            <!-- <a href="{% url 'creators_view' %}" tabindex="0">Twórcy</a> -->
+            <a href="{% url 'creators_view' %}" tabindex="0">Twórcy</a>
           </div>
           <div class="nav__leftPanelSocials">
             <div class="nav__leftPanelSocials-icon">
@@ -150,7 +152,7 @@
           {% endif %}
           <p class="nav__rightPanel-text">Pozostałe projekty do wygenerowania:
             </br><span>{{user.generation_quantity}}</span>
-            </br><span>liczba generacji full wersji{{user.full_generation_quantity}}</span>
+            {% comment %} </br><span style="font-size:2.5rem">Pełne wersje:{{user.full_generation_quantity}}</span> {% endcomment %}
           </p>
 
           <a href="{% url 'logout_auth' %}">Wyloguj</a>

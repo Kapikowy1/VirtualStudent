@@ -412,6 +412,12 @@ def process_bachelor_request(request, check_duplicates, is_full_version):
 
 
 def checkSpotInQueue():
+    #TODO:wyłączone na potrzeby prezentacji
+
+    return {
+        'spot_in_queue': 1,
+        'estimated_time': 1
+    }
 
     pending_queue = QueueInfo.objects.filter(status='pending')
 
@@ -447,7 +453,7 @@ def checkSpotInQueue():
 
 def sendEmailWithBachelor(request):
 
-    #wyłączone na potrzeby prezentacji
+    #TODO:wyłączone na potrzeby prezentacji
     return 
 
     current_site = get_current_site(request)
@@ -518,7 +524,26 @@ def generationViewEmpty(request):
 #static render_html_page
 
 def home(request):
-    return render(request, 'users/home.html',{'error_msg': ''})
+    # TODO: auto login do wersji demo, Fake credentials
+    fake_user_credentials = {
+        "username": "Andrzej",
+        "password": "123456"
+    }
+
+    # Spróbuj zalogować użytkownika
+    user = authenticate(
+        request, 
+        username=fake_user_credentials["username"], 
+        password=fake_user_credentials["password"]
+    )
+
+    if user is not None:
+        login(request, user)  
+        error_msg = ''
+    else:
+        error_msg = 'Nie udało się zalogować.'
+
+    return render(request, 'users/home.html', {'error_msg': error_msg})
 
 
 def cooperation_view(request):
@@ -537,7 +562,7 @@ def dashboard(request):
 
 
 def creators_view(request):
-    return render(request, 'users/login.html',{'error_msg': ''})
+    # return render(request, 'users/login.html',{'error_msg': ''})
     return render(request, 'users/creators.html')
 
 

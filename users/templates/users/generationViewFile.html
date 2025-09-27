@@ -17,10 +17,16 @@
 
                 <h1 class="section-heading">Dziękujemy za skorzystanie z aplikacji</h1>
 
-                <p>Twoja inspiracja jest już tworzona przez asystenta może to potrwać <span id="estimated_time"></span>
+                <p>Wersja demonstracyjna.
+                    W tej wersji możesz przeglądać przykładowe inspiracje projektów klikając strzałkę poniżej.
+                    W pełnej wersji otrzymasz gotową inspirację projektu bezpośrednio na swój e-mail. Proces ten trwa około 5 minut.
+                </p>
+                 {% comment %} TODO: fragment pelnej wersji odkomentowac do uzytku {% endcomment %}
+                {% comment %} <p>Twoja inspiracja jest już tworzona przez asystenta może to potrwać <span id="estimated_time"></span>
                     minut,
                     po zakończeniu pracy zostanie przesłana na adres e-mail:
-                </p>
+                </p> {% endcomment %}
+
 
                 <div class="generationView__box-email">
 
@@ -58,7 +64,7 @@
 
             <div class="generationView__soon">
 
-                <p class="generationView__soon-title">Już wkrótce!</p>
+                {% comment %} <p class="generationView__soon-title">Już wkrótce!</p> {% endcomment %}
 
                 <a href="#files">
                     <div class="generationView__soon-arrow">
@@ -81,7 +87,7 @@
 
     <div class="wrapper">
 
-        <h2 class="section-heading">Już wkrótce!</h2>
+        <h2 style="text-transform: none;" class="section-heading">Co potrafi AI wrapper ?</h2>
 
         <div class="files__gallery">
 
@@ -110,32 +116,6 @@
                         <path d="M19 7h-4l-.001 -4.001z" />
                     </svg></div>
             </div>
-            <div class="files__box">
-                <h2 class="files__title">Jak pomaga nam AI w naszej rzeczywistości</h2>
-                <div class="files__box-pdf" data-name="Jak pomaga nam AI w naszej rzeczywistości"
-                    data-src="{% static 'pdf/Jak pomaga nam AI w naszej rzeczywistości.pdf' %}"><svg
-                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000"
-                        class="icon icon-tabler icons-tabler-filled icon-tabler-file">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z" />
-                        <path d="M19 7h-4l-.001 -4.001z" />
-                    </svg></div>
-            </div>
-            <div class="files__box">
-                <h2 class="files__title">Zdrowy styl życia</h2>
-                <div class="files__box-pdf" data-name="Zdrowy styl życia"
-                    data-src="{% static 'pdf/Zdrowy styl życia.pdf' %}"><svg xmlns="http://www.w3.org/2000/svg"
-                        width="24" height="24" viewBox="0 0 24 24" fill="#000000"
-                        class="icon icon-tabler icons-tabler-filled icon-tabler-file">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
-                        <path
-                            d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z" />
-                        <path d="M19 7h-4l-.001 -4.001z" />
-                    </svg></div>
-            </div>
-
-
 
         </div>
 

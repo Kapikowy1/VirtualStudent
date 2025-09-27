@@ -179,6 +179,7 @@ EMAIL_HOST_USER = '' #TODO:wypelnic
 EMAIL_HOST_PASSWORD = config("GODADDY_PASS") ## lub haslo do innego serwisu
 DEFAULT_FROM_EMAIL = ''#TODO:wypelnic
 
+# kolejkowanie asynchroniczne procesów
 Q_CLUSTER = {
     'name': 'DjangoQ',
     'workers': 4,

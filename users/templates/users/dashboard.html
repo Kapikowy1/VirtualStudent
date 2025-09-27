@@ -11,7 +11,10 @@
 
     <div class="wrapper">
 
-        <form class="dashboard-form" action="{% url 'generation_view' %}" method="post">
+            {% comment %} TODO: standardowy kod - w wersji nieprodukcyjnej {% endcomment %}
+        {% comment %} <form class="dashboard-form" action="{% url 'generation_view' %}" method="post"> {% endcomment %}
+
+        <form class="dashboard-form" action="{% url 'generation_view_file' %}" method="post">
 
             {% csrf_token %}
 
@@ -31,8 +34,10 @@
                 <span class="dashboard__tooltip-text dashboard__tooltip-text--topic wrapper">
                     Temat powinien zawierać od 15 do 150 znaków i może zawierać wyłącznie litery oraz cyfry.
                 </span>
-                <textarea type="text" id="id_topic" name="topic" placeholder="Podaj temat" minLength="15"
-                    maxLength="150" title="Uzupełnij temat projektu" class="textarea-topic">{{topic}}</textarea>
+                {% comment %} <textarea disabled type="text" id="id_topic" name="topic" placeholder="Podaj temat" minLength="15"
+                    maxLength="150" title="Uzupełnij temat projektu" class="textarea-topic">{{topic}}</textarea> {% endcomment %}
+                <textarea disabled type="text" id="id_topic" name="topic" placeholder="Podaj temat" minLength="15"
+                    maxLength="150" title="Uzupełnij temat projektu" class="textarea-topic">Temat demonstracyjny projektu</textarea>
 
                 <p class="dashboard__box-errorText">Temat projektu</p>
             </div>
@@ -66,13 +71,17 @@
                         <li>Unikaj zbędnych powtórzeń i ogólników, zachowując spójność i logikę wypowiedzi.</li>
                     </ul>
                 </span>
-                <textarea type="text" id="id_purpose" name="purpose" placeholder="Podaj cel" minLength="20"
-                    maxLength="470" title="Uzupełnij cel projektu" class="textarea-purpose">{{purpose}}</textarea>
+                {% comment %} <textarea disabled type="text" id="id_purpose" name="purpose" placeholder="Podaj cel" minLength="20"
+                    maxLength="470" title="Uzupełnij cel projektu" class="textarea-purpose">{{purpose}}</textarea> {% endcomment %}
+
+                <textarea disabled type="text" id="id_purpose" name="purpose" placeholder="Podaj cel" minLength="20"
+                maxLength="470" title="Uzupełnij cel projektu" class="textarea-purpose">Cel demonstracyjny projektu</textarea>
+
+
                 <p class="dashboard__box-errorText">Cel projektu</p>
             </div>
 
             <button class="dashboard-btn" id="dashboard__control-button-send" type="submit">Dalej</button>
-
 
 
 
