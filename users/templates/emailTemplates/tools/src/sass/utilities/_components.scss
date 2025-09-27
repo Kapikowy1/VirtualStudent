@@ -1,0 +1,57 @@
+@use './utilities/colors';
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	// background-color: colors.$main_color;
+	overflow-x: hidden;
+	color: colors.$dark;
+}
+
+a {
+	text-decoration: none;
+	color: colors.$dark;
+
+	&:focus {
+		outline: dashed;
+	}
+}
+
+li {
+	list-style: none;
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+}
+
+h1,
+h2 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-heading {
+	font-size: 3.1rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	@media (min-width: 700px) {
+		font-size: 4.5rem;
+	}
+}

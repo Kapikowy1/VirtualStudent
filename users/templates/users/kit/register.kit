@@ -1,0 +1,127 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>REGISTER - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/register.css' %}">
+</head>
+
+<header class="register">
+    <div class="wrapper">
+        <form class="register-form" method="post">
+            {% csrf_token %}
+
+            <h2 class="section-heading section-heading--register">Rejestracja</h2>
+
+            <div class="register__box">
+                <label for="id_username">Nazwa użytkownika <svg onclick="void(0)" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-question register__tooltip-icon register__tooltip-icon--username">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                        <path d="M10 13l0 .01" />
+                        <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474" />
+                    </svg></label>
+                <span
+                    class="register__tooltip-text register__tooltip-text--username register__tooltip-text--down wrapper">
+                    Nazwa użytkownika powinna mieć od 3 do 15 znaków i może zawierać wyłącznie litery oraz cyfry.
+                </span>
+                <input type="text" id="id_username" name="username" required pattern="[a-zA-Z0-9]+" minlength="3"
+                    maxlength="15" placeholder="Podaj nazwę użytkownika" title="Uzupełnij nazwę użytkownika">
+                <p class="register__box-errorText">Error</p>
+            </div>
+
+            <div class="register__box">
+                <label for="id_password">Hasło <svg onclick="void(0)" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-question register__tooltip-icon register__tooltip-icon--password">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                        <path d="M10 13l0 .01" />
+                        <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474" />
+                    </svg></label>
+                <span
+                    class="register__tooltip-text register__tooltip-text--password register__tooltip-text--down wrapper">
+                    Hasło powinno mieć od 6 do 25 znaków i może zawierać litery, cyfry oraz następujące znaki
+                    specjalne: @, #, $, &.
+                </span>
+                <input type="password" id="id_password" name="password" required minlength="6" maxlength="25"
+                    placeholder="Podaj hasło" title="Uzupełnij hasło">
+                <p class="register__box-errorText">Error</p>
+            </div>
+
+            <div class="register__box">
+                <label for="id_password_confirm">Powtórz hasło <svg onclick="void(0)" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-question register__tooltip-icon register__tooltip-icon--confirmPassword">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                        <path d="M10 13l0 .01" />
+                        <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474" />
+                    </svg></label>
+                <span
+                    class="register__tooltip-text register__tooltip-text--confirmPassword register__tooltip-text--top wrapper">
+                    Hasło musi być identyczne jak wprowadzone powyżej.
+                </span>
+                <input type="password" id="id_password_confirm" name="password_confirm" required minlength="6"
+                    maxlength="25" placeholder="Powtórz hasło" title="Uzupełnij hasło">
+                <p class="register__box-errorText">Error</p>
+            </div>
+
+            <div class="register__box">
+                <label for="id_email">Adres e-mail <svg onclick="void(0)" xmlns="http://www.w3.org/2000/svg" width="24"
+                        height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-question register__tooltip-icon register__tooltip-icon--email">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                        <path d="M10 13l0 .01" />
+                        <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474" />
+                    </svg></label>
+                <span class="register__tooltip-text register__tooltip-text--email register__tooltip-text--top wrapper">
+                    Email powinien zawierać litery, cyfry oraz następujące znaki
+                    specjalne: ., @, _, -.
+                </span>
+                <input type="email" id="id_email" name="email" required
+                    pattern="[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}$" title="Uzupełnij e-mail" maxlength="320"
+                    placeholder="Podaj E-mail" class="id_email">
+                <p class="register__box-errorText">Error</p>
+            </div>
+
+            <div class="register__box">
+                <label for="is_consent_pop" class="register__box-checkbox">
+                    <input type="checkbox" class="register__box-consentCheckbox" id="is_consent_pop"
+                        name="is_consent_pop" value="1">
+                    <span class="register__box-consentText">Zapoznałem się i akceptuje
+                        <a href="{% url 'terms_of_use_view' %}">regulamin</a>*</span>
+                </label>
+                <input type="hidden" class="register__box-checkbox" id="is_consent_pop_hidden" name="is_consent_pop"
+                    value="0">
+            </div>
+
+            <button type="submit" id="register_button" class="register__button register__button--disabled"
+                disabled>Zarejestruj
+                się</button>
+
+            <div class="register__bottom">
+                <p>Masz już konto?</p>
+                <a href="{% url 'login_view' %}" tabindex="0">Zaloguj się</a>
+                <p class="register__bottom-addition">* Wymagane</p>
+            </div>
+        </form>
+    </div>
+</header>
+
+<script src="{% static 'js/register/registerErrorHandler.js' %}"></script>
+<script src="{% static 'js/register/registerTooltip.js' %}"></script>
+
+
+{% endblock content %}

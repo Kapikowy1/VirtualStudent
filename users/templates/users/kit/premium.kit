@@ -1,0 +1,95 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>TWÓRCY - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/premium.css' %}">
+</head>
+
+<header class="header">
+
+    <div class="wrapper">
+        <p class="header-text header-text--top">!hardWork</p>
+
+        <h1 class="header-heading">Premium</h1>
+
+        <a href="#files">
+            <div class="header__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#e0e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-down">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 5l0 14" />
+                    <path d="M18 13l-6 6" />
+                    <path d="M6 13l6 6" />
+                </svg>
+            </div>
+        </a>
+
+    </div>
+</header>
+
+<section id="files" class="files">
+
+    <div class="wrapper">
+
+        <div class="files__gallery">
+
+            <div class="files__box">
+                <h2 class="files__title">Jak pomaga nam AI w naszej rzeczywistości</h2>
+                <div class="files__box-pdf" data-name="Jak pomaga nam AI w naszej rzeczywistości"><iframe
+                        src="{% static 'pdf/Jak pomaga nam AI w naszej rzeczywistości.pdf' %}"></iframe></div>
+            </div>
+            <div class="files__box">
+                <h2 class="files__title">Zdrowy styl życia</h2>
+                <div class="files__box-pdf" data-name="Zdrowy styl życia"><iframe
+                        src="{% static 'pdf/Zdrowy styl życia.pdf' %}"></iframe></div>
+            </div>
+            <div class="files__box">
+                <h2 class="files__title">Jak pomaga nam AI w naszej rzeczywistości</h2>
+                <div class="files__box-pdf" data-name="Jak pomaga nam AI w naszej rzeczywistości"><iframe
+                        src="{% static 'pdf/Jak pomaga nam AI w naszej rzeczywistości.pdf' %}"></iframe></div>
+            </div>
+            <div class="files__box">
+                <h2 class="files__title">Zdrowy styl życia</h2>
+                <div class="files__box-pdf" data-name="Zdrowy styl życia"><iframe
+                        src="{% static 'pdf/Zdrowy styl życia.pdf' %}"></iframe></div>
+            </div>
+
+
+
+        </div>
+
+        <div class="files__preview">
+
+            <div class="files__details">
+                <div class="files__details-title">
+                    <span>
+                        <p class="files__details-titleName">Nie określono</p>
+                    </span>
+                </div>
+                <div class="files__details-close">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M18 6l-12 12" />
+                            <path d="M6 6l12 12" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="files__fullPdf" scrolling="yes"><iframe src=""></iframe></div>
+
+        </div>
+
+    </div>
+
+    <div class="shadow"></div>
+</section>
+
+<script src="{% static 'js/premium/files.js' %}"></script>
+
+{% endblock content %}

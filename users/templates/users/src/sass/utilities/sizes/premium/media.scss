@@ -1,0 +1,113 @@
+// @use '../../../utilities/mixins';
+
+// @media (min-width: 330px) {
+// .header {
+// 	&-heading {
+// 		font-size: 3.7rem;
+// 	}
+
+// 	&-text {
+// 		font-size: 1.8rem;
+// 	}
+// }
+// }
+
+@media (min-width: 415px) {
+	.header {
+		&-heading {
+			font-size: 8.7rem;
+		}
+
+		&-text {
+			font-size: 4rem;
+		}
+	}
+
+	.files {
+		&__details {
+			&-title {
+				font-size: 2rem;
+				width: 90%;
+			}
+		}
+	}
+}
+
+@media (min-width: 530px) {
+	// .header {
+	// 	&-heading {
+	// 		font-size: 6rem;
+	// 		margin: 0.5em;
+	// 	}
+
+	// 	&-text {
+	// 		font-size: 2rem;
+	// 	}
+	// }
+}
+
+// @media (min-width: 680px) {
+// 	.header {
+// 		&-heading {
+// 			font-size: 7.8rem;
+// 		}
+// 	}
+// }
+
+@media (min-width: 768px) {
+	.files {
+		&__gallery {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__box {
+			margin: 1em 2em;
+			width: 40%;
+			&-pdf {
+				width: 100%;
+				iframe {
+					width: 130%;
+				}
+			}
+		}
+
+		&__title {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media (min-width: 860px) {
+	.header {
+		&-heading {
+			font-size: 12.5rem;
+		}
+
+		// &-text {
+		// 	font-size: 5.7rem;
+		// }
+	}
+}
+
+// @media (min-width: 1020px) {
+// 	.header {
+// 		&-heading {
+// 			font-size: 12rem;
+// 			margin: 0.1em;
+// 		}
+
+// 		&-text {
+// 			font-size: 3rem;
+// 		}
+// 	}
+// }
+
+@media (min-width: 1125px) {
+	.header {
+		&-heading {
+			font-size: 14rem;
+		}
+	}
+}

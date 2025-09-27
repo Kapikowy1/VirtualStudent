@@ -1,0 +1,147 @@
+@media (min-width: 415px) {
+	.header {
+		&-heading {
+			font-size: 8.7rem;
+		}
+
+		&-text {
+			font-size: 4rem;
+		}
+	}
+
+	.files {
+		&__details {
+			&-title {
+				font-size: 2rem;
+				width: 90%;
+			}
+		}
+	}
+}
+
+@media (min-width: 450px) {
+	.generationView {
+		&__box {
+			&-email {
+				input {
+					font-size: 2.5rem;
+				}
+			}
+		}
+	}
+
+	.files {
+		&__box {
+			&-pdf {
+				svg {
+					width: 8rem;
+					height: 8rem;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 700px) {
+	.generationView {
+		height: 95vh;
+		text-align: left;
+
+		&__wrapper {
+			flex-direction: row;
+			gap: 5em;
+			padding: 2em;
+			margin-top: 5em;
+		}
+
+		&__box {
+			p {
+				font-size: 2rem;
+			}
+
+			&-email {
+				input {
+					font-size: 3rem;
+				}
+			}
+
+			&-queue {
+				display: flex;
+				width: 100%;
+				align-items: center;
+				justify-content: center;
+				gap: 2em;
+				p {
+					display: block;
+				}
+			}
+
+			&-quit {
+				text-align: center;
+			}
+
+			&-end {
+				display: flex;
+				flex-direction: row-reverse;
+			}
+		}
+
+		&__soon {
+			&-title {
+				font-size: 5rem;
+			}
+
+			&-arrow {
+				svg {
+					width: 15rem;
+					height: 15rem;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 768px) {
+	.files {
+		&__gallery {
+			display: flex;
+			justify-content: center;
+			flex-wrap: wrap;
+		}
+
+		&__box {
+			margin: 1em 2em;
+			width: 40%;
+			&-pdf {
+				width: 100%;
+				iframe {
+					width: 130%;
+				}
+				svg {
+					width: 15rem;
+					height: 15rem;
+				}
+			}
+		}
+
+		&__title {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media (min-width: 860px) {
+	.header {
+		&-heading {
+			font-size: 12.5rem;
+		}
+	}
+}
+
+@media (min-width: 1125px) {
+	.header {
+		&-heading {
+			font-size: 14rem;
+		}
+	}
+}

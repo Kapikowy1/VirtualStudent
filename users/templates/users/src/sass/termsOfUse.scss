@@ -1,0 +1,105 @@
+@use './utilities/colors';
+@use './utilities/mixins';
+@use './utilities/animations';
+
+html {
+	overflow-x: hidden;
+}
+
+.header {
+	@include mixins.headerSection;
+	// @include mixins.heroImages('../img/header_mini.jpg');
+	@include mixins.heroImages;
+
+	&-heading {
+		font-size: 4rem;
+		margin: 0.2em;
+	}
+
+	&-text {
+		font-size: 2.4rem;
+		color: colors.$blue;
+	}
+
+	&__arrow {
+		position: absolute;
+		border: 2px solid colors.$white;
+		border-radius: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 1em;
+
+		svg {
+			width: 4rem;
+			height: 4rem;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			width: 100%;
+			height: 100%;
+			border: 2px solid colors.$white;
+			border-radius: 50%;
+			animation: pulseArrow 2s infinite;
+		}
+	}
+}
+
+.termsOfUse {
+	background-color: colors.$white;
+	color: black;
+
+	&-heading {
+		display: flex;
+		text-align: center;
+		justify-content: center;
+		// margin-bottom: 0.5em;
+		padding: 0.5em;
+		font-size: 2.8rem;
+	}
+
+	&-point {
+		font-size: 2rem;
+		padding: 0.5em;
+	}
+
+	&__subsections {
+		padding: 0.5em;
+
+		&-underline {
+			text-decoration: underline;
+			cursor: default;
+		}
+
+		&-tooltip {
+			position: absolute;
+			width: 75%;
+			left: 50%;
+			font-size: 1.3rem;
+			text-align: center;
+			padding: 0.7em;
+			transform: translateX(-50%);
+			background-color: colors.$white;
+			border-radius: 5px;
+			border: 3px solid colors.$main_color;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+
+			&--show {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+
+		p {
+			padding: 0.5em;
+			font-size: 1.5rem;
+		}
+	}
+}
+
+@import './utilities/sizes/termsOfUse/media.scss';

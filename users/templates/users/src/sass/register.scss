@@ -1,0 +1,104 @@
+@use './utilities/colors';
+@use './utilities/mixins';
+
+.register {
+	@include mixins.heroImages;
+	@include mixins.registerLogin;
+
+	.register__box .register__box-errorText {
+		font-size: 1rem;
+		visibility: hidden;
+
+		color: colors.$red;
+		font-weight: bold;
+	}
+
+	.register__box .register__box--vissible {
+		visibility: visible;
+	}
+
+	.register__box--error {
+		.register__box-errorText {
+			color: colors.$red;
+			visibility: visible;
+		}
+
+		input {
+			border: 2px solid colors.$red;
+			background-color: colors.$red_field;
+			color: colors.$dark;
+
+			&::placeholder {
+				color: colors.$dark;
+			}
+		}
+	}
+
+	.register__box {
+		#is_consent_pop {
+			width: 2.5rem;
+			height: 2.5rem;
+		}
+
+		&-checkbox {
+			display: flex;
+			text-align: center;
+			justify-content: center;
+			align-items: center;
+			gap: 0.3em;
+
+			input {
+				cursor: pointer;
+			}
+
+			a {
+				text-decoration: underline;
+				color: colors.$dark;
+			}
+		}
+	}
+
+	&__tooltip {
+		&-icon {
+			width: 1.5rem;
+			height: 1.5rem;
+		}
+
+		&-text {
+			position: absolute;
+			width: 75%;
+			left: 50%;
+
+			font-size: 1.3rem;
+			text-align: center;
+			padding: 0.7em;
+			transform: translateX(-50%);
+			background-color: colors.$white;
+			border-radius: 5px;
+			border: 3px solid colors.$main_color;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+
+			&--down {
+				margin-top: 7rem;
+			}
+
+			&--top {
+				margin-top: -7.5rem;
+			}
+
+			&--show {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+
+	&__button--disabled {
+		pointer-events: none; /* Blokuje interakcje */
+		cursor: not-allowed; /* Wskazuje blokadę */
+	}
+}
+
+@import './utilities/sizes/register/media.scss';

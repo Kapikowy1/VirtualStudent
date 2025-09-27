@@ -1,0 +1,123 @@
+@media (min-width: 450px) {
+	.register {
+		h2 {
+			margin-top: 2em;
+		}
+
+		&__box {
+			padding: 0.5em;
+			width: 60%;
+			margin-left: 20%;
+
+			label,
+			input {
+				font-size: 1.9rem;
+			}
+
+			p {
+				font-size: 11.7rem;
+			}
+		}
+
+		&__tooltip {
+			&-icon {
+				width: 2rem;
+				height: 2rem;
+			}
+
+			&-text {
+				width: 55%;
+				font-size: 1.5rem;
+
+				&--down {
+					margin-top: 9rem;
+				}
+
+				&--top {
+					margin-top: -9rem;
+				}
+			}
+		}
+
+		.register__box .register__box-errorText {
+			font-size: 1.4rem;
+		}
+
+		&__bottom {
+			font-size: 1.8rem;
+
+			&-addition {
+				font-size: 1.1rem;
+			}
+		}
+		button {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media (min-width: 700px) {
+	.register {
+		&__tooltip {
+			&-text {
+				margin-top: -8.5rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 750px) {
+	.register {
+		&__tooltip {
+			&-text {
+				margin-top: -7.5rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 1020px) {
+	.register {
+		&__box {
+			width: 50%;
+			margin-left: 25%;
+
+			label,
+			input {
+				font-size: 3rem;
+			}
+		}
+
+		&__tooltip {
+			&-icon {
+				width: 2rem;
+				height: 2rem;
+			}
+
+			&-text {
+				width: 45%;
+				max-width: 580px;
+				font-size: 1.7rem;
+
+				&--down {
+					margin-top: -7.5rem;
+				}
+			}
+		}
+
+		.register__box .register__box-errorText {
+			font-size: 1.7rem;
+		}
+
+		&__bottom {
+			font-size: 2.5rem;
+
+			&-addition {
+				font-size: 1.5rem;
+			}
+		}
+		button {
+			font-size: 3rem;
+		}
+	}
+}

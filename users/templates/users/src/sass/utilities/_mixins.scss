@@ -1,0 +1,133 @@
+@use './colors';
+
+@mixin registerForm {
+	padding: 1em;
+	margin-bottom: 0.7em;
+	padding: 0.6em 1.2em;
+	border: 2px solid colors.$white;
+	border-radius: 8px;
+	font-size: 1.5rem;
+	background: none;
+
+	@media (min-width: 576px) {
+		font-size: 2rem;
+	}
+}
+
+@mixin activeWeb {
+	text-shadow: 0 0 15px colors.$green, 0 0 25px colors.$green, 0 0 45px colors.$green;
+}
+
+@mixin blur {
+	border-radius: 15%;
+	background-color: colors.$blue;
+	backdrop-filter: blur(3px);
+}
+
+///////////////////////////////////// nowe ////////////////////
+///
+
+@mixin headerSection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 95vh;
+}
+
+// @mixin heroImages($bgImg) {
+// 	background-image: colors.$header, url($bgImg);
+// 	background-size: cover;
+// 	background-position: center;
+// 	background-attachment: scroll;
+// }
+
+@mixin heroImages {
+	background-image: linear-gradient(180deg, rgba(3, 45, 70, 0.89), rgba(3, 83, 122, 0.685), rgba(10, 42, 63, 0.925)),
+		url(('../img/header_mini.webp'));
+	background-size: cover;
+	background-position: center;
+	background-attachment: scroll;
+
+	// @media (min-width: 700px) {
+	// 	background-image: linear-gradient(180deg, rgba(36, 162, 236, 0.781), rgba(6, 77, 113, 0.5), rgba(1, 17, 27, 0.867)),
+	// 		url(('../img/header_large.jpg'));
+	// }
+}
+
+@mixin registerLogin {
+	@include headerSection;
+	position: relative;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		padding: 1em;
+		margin: 1.5em;
+		width: 80%;
+		margin-left: 10%;
+		border-radius: 20px;
+		background-color: colors.$white_gray;
+		color: colors.$dark;
+		z-index: 5;
+
+		label,
+		input,
+		textarea {
+			font-size: 1.3rem;
+			font-weight: 700;
+			padding-left: 0.5em;
+		}
+
+		input,
+		textarea {
+			color: colors.$white;
+			background-color: colors.$main_color;
+			margin: 0.2em;
+			padding: 0.25em;
+			border-radius: 10px;
+
+			&::placeholder {
+				color: colors.$white;
+				// padding: 0.8em;
+				// margin: 0.4em;
+				text-align: center;
+			}
+		}
+
+		textarea {
+			max-width: 98%;
+			min-width: 98%;
+			min-height: 6rem;
+		}
+		.textarea {
+			&-topic {
+				max-height: 9rem;
+			}
+
+			&-purpose {
+				max-height: 14rem;
+			}
+		}
+	}
+	&__bottom {
+		text-align: center;
+		margin: 1em 0;
+		font-size: 1.2rem;
+
+		a {
+			font-weight: 700;
+		}
+
+		&-addition {
+			font-size: 0.9rem;
+			margin-top: 1em;
+		}
+	}
+}
+
+@mixin btnScreenReaderInfo {
+	font-size: 1px;
+	position: absolute;
+	color: transparent;
+}

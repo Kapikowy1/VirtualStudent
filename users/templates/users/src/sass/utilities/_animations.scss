@@ -1,0 +1,29 @@
+@keyframes pulse {
+	0% {
+		box-shadow: rgba(30, 65, 105, 0.8) 0px 0px 40px 10px, rgba(30, 65, 105, 0.6) 0px 250px 250px -100px,
+			rgba(30, 65, 105, 0.6) 0px 100px 300px 100px, rgba(30, 65, 105, 0.6) 0px 100px 200px 0px,
+			rgba(30, 65, 105, 0.6) 0px 100px 100px 0px;
+	}
+	50% {
+		box-shadow: rgba(224, 224, 255, 0.8) 0px 0px 40px 10px, rgba(224, 224, 255, 0.6) 0px 250px 250px -100px,
+			rgba(224, 224, 255, 0.6) 0px 100px 300px 100px, rgba(224, 224, 255, 0.6) 0px 100px 200px 0px,
+			rgba(224, 224, 255, 0.6) 0px 100px 100px 0px;
+	}
+	100% {
+		box-shadow: rgba(9, 32, 63, 0.8) 0px 0px 40px 10px, rgba(9, 32, 63, 0.6) 0px 250px 250px -100px,
+			rgba(9, 32, 63, 0.6) 0px 100px 300px 100px, rgba(9, 32, 63, 0.6) 0px 100px 200px 0px,
+			rgba(9, 32, 63, 0.6) 0px 100px 100px 0px;
+	}
+}
+
+@keyframes pulseArrow {
+	from {
+		transform: scale(1);
+		opacity: 0.5;
+	}
+
+	to {
+		transform: scale(1.4);
+		opacity: 0;
+	}
+}

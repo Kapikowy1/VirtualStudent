@@ -1,0 +1,224 @@
+@use '../../../utilities/mixins';
+
+@media (min-width: 330px) {
+	.header {
+		&-heading {
+			font-size: 3.7rem;
+		}
+
+		&-text {
+			font-size: 1.8rem;
+		}
+	}
+}
+
+@media (min-width: 415px) {
+	.header {
+		&-heading {
+			font-size: 4.7rem;
+		}
+
+		&-text {
+			font-size: 2rem;
+
+			&--top {
+				margin-top: 0;
+			}
+		}
+	}
+
+	.creators {
+		&__field {
+			margin-top: 20%;
+		}
+
+		&__boxes {
+			margin: -20% 5em 20%;
+
+			img {
+				width: 50%;
+			}
+		}
+	}
+}
+
+@media (min-width: 530px) {
+	.header {
+		&-heading {
+			font-size: 6rem;
+			margin: 0.5em;
+		}
+
+		&-text {
+			font-size: 2rem;
+		}
+	}
+
+	.signUp {
+		&__wrapper {
+			.section-heading {
+				font-size: 3.2rem;
+			}
+			&-text {
+				font-size: 3rem;
+				margin: 0 0 1em;
+			}
+			&-btn {
+				font-size: 2.5rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 680px) {
+	.header {
+		&-heading {
+			font-size: 7.8rem;
+		}
+
+		// &-text {
+		// 	&--top {
+		// 		// margin-top: 5em;
+		// 	}
+		// }
+	}
+
+	.creators {
+		&__box {
+			flex-direction: row;
+			margin-top: 0;
+		}
+
+		&__boxes {
+			margin: -20% 2em 2em;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		&-text {
+			&--finish {
+				margin-bottom: 2em;
+			}
+		}
+	}
+}
+
+@media (min-width: 700px) {
+	// .header {
+	// 	// @include mixins.heroImages('../img/header_large.jpg');
+	// }
+
+	.about {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&-text {
+				width: 55%;
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+			}
+		}
+
+		&-text {
+			font-size: 1.7rem;
+		}
+
+		&-img {
+			max-height: 400px;
+		}
+	}
+
+	.signUp {
+		&__wrapper {
+			&-text {
+				font-size: 4rem;
+				margin: 0 0 1em;
+			}
+			&-btn {
+				font-size: 3.5rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 860px) {
+	.header {
+		&-heading {
+			font-size: 8.5rem;
+			margin: 0.3em;
+		}
+
+		// &-text {
+		// 	font-size: 2.3rem;
+
+		// 	&--top {
+		// 		margin-top: 2em;
+		// 	}
+
+		// 	&--bottom {
+		// 		margin-bottom: 0.5em;
+		// 	}
+		// }
+
+		&__arrow {
+			margin-top: 2em;
+		}
+	}
+
+	.about {
+		&__box {
+			&-text {
+				width: 75%;
+			}
+		}
+		&-text {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media (min-width: 1020px) {
+	.header {
+		&-heading {
+			font-size: 9.5rem;
+			margin: 0.1em;
+		}
+
+		&-text {
+			font-size: 2.5rem;
+		}
+	}
+
+	.about {
+		&-text {
+			font-size: 2.2rem;
+		}
+	}
+
+	.signUp {
+		&__wrapper {
+			.section-heading {
+				font-size: 5.2rem;
+			}
+			&-text {
+				font-size: 4rem;
+				margin: 0 0 0.5em;
+			}
+			&-btn {
+				font-size: 3.5rem;
+			}
+		}
+	}
+}
+
+// @media (min-width: 1125px) {
+// 	.header {
+// 		&-heading {
+// 			// font-size: 10.5rem;
+// 		}
+// 	}
+// }

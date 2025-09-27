@@ -1,0 +1,43 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Generowanie - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/generationView.css' %}">
+</head>
+
+
+<header class="generationView">
+
+    <div class="wrapper">
+
+        <h2 class="section-heading">Podsumowanie</h2>
+
+        <div class="generationView__box">
+            <p class="generationView__box-text">Temat: <span>{{topic}}</span></p>
+        </div>
+        <div class="generationView__box">
+            <p class="generationView__box-text">Cel: <span>{{purpose}}</span></p>
+        </div>
+
+        <div class="generationView__buttons">
+
+            <div>
+                <a href="{% url 'dashboard_view' %}">Cofnij</a>
+            </div>
+
+            <form id="id_generateForm" action="{% url 'generateBachelor' %}">
+                <button id="id_generateButton">Generuj</button>
+        </div>
+        </form>
+        <form id="id_generateForm" action="{% url 'generate_bachelor_clear' %}">
+            <button id="id_generateButton">Zignoruj zduplikowany temat</button>
+        </form>
+    </div>
+
+
+
+</header>
+
+{% endblock content %}

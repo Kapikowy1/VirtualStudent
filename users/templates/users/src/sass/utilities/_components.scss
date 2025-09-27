@@ -1,0 +1,103 @@
+@use './utilities/colors';
+
+*,
+:after,
+:before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+	background-color: colors.$main_color;
+	overflow-x: hidden;
+	color: colors.$white;
+}
+
+a {
+	text-decoration: none;
+	color: colors.$white;
+
+	&:focus {
+		outline: dashed;
+	}
+}
+
+li {
+	list-style: none;
+}
+
+button {
+	font-family: 'Roboto', sans-serif;
+	border: none;
+	cursor: pointer;
+	background-color: colors.$white_gray;
+	font-weight: 700;
+	font-size: 1.5rem;
+	padding: 0.5em;
+	border-radius: 20px;
+	transition: background-color 0.5s ease;
+
+	&:hover,
+	&:focus {
+		background-color: colors.$blue;
+		outline: none;
+	}
+}
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-weight: 300;
+}
+
+h1,
+h2,
+h3 {
+	font-family: 'Roboto', sans-serif;
+	font-weight: 700;
+}
+
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
+.section-heading {
+	position: relative;
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+	font-size: 3.1rem;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 2px;
+
+	&--register {
+		margin-top: 3em;
+
+		@media (min-width: 450px) {
+			margin-bottom: 0.5em;
+		}
+	}
+
+	&--dashboard {
+		margin-top: 4em;
+		font-size: 2.1rem;
+
+		@media (min-width: 450px) {
+			font-size: 3.1rem;
+			margin-bottom: 0.5em;
+		}
+	}
+
+	@media (min-width: 700px) {
+		font-size: 4.5rem;
+		margin-bottom: 1em;
+	}
+}
+
+.section-padding {
+	padding: 4em 2em;
+}

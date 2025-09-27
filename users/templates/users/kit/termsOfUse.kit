@@ -1,0 +1,236 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Warunki użytkowania - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/termsOfUse.css' %}">
+</head>
+
+<header class="header">
+
+    <div class="wrapper">
+        <p class="header-text header-text--top">!hardWork</p>
+
+        <h1 class="header-heading">Warunki użytkowania</h1>
+
+        <a href="#terms-of-use">
+            <div class="header__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#e0e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-down">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 5l0 14" />
+                    <path d="M18 13l-6 6" />
+                    <path d="M6 13l6 6" />
+                </svg>
+            </div>
+        </a>
+
+    </div>
+</header>
+
+<section id="terms-of-use" class="termsOfUse">
+
+    <div class="wrapper">
+
+        <h2 class="termsOfUse-heading">Regulamin użytkowania</h2>
+
+        <div class="termsOfUse__contents">
+
+            <h3 class="termsOfUse-point">I. Definicje</h3>
+
+            <div class="termsOfUse__subsections">
+                <p>1. <b>Użytkownik: </b>osoba posiadająca konto w serwisie, która
+                    zaakceptowała politykę prywatności i
+                    regulamin.</p>
+                <p>2. <b>Operator: </b>dostawca usługi, którym jest <span class="termsOfUse__subsections-underline"
+                        onclick="void(0)">administrator strony www.nhardwork.com</span>
+                </p>
+                <span class="termsOfUse__subsections-tooltip wrapper">
+                    Administrator Pani/Pana danych osobowych może udostępnić swoje pełne dane na życzenie osoby,
+                    której dane dotyczą, po wcześniejszej weryfikacji tożsamości osoby wnioskującej.
+                    Po kontakcie pod adresem support@nhardwork.com.
+                </span>
+                <p>3. <b>OpenAI: </b>organizacja odpowiedzialna za rozwój technologii chat
+                    GPT.</p>
+            </div>
+
+            <h3 class="termsOfUse-point">II. Zasady korzystania z technologii GPT</h3>
+
+            <div class="termsOfUse__subsections">
+
+                <p>Nasza aplikacja korzysta z technologii chat GPT, stworzonej przez OpenAI. Użytkowanie naszej usługi
+                    musi
+                    więc obejmować również zasady korzystania z chat GPT, określone przez OpenAI. Użytkownicy
+                    zobowiązani są
+                    do przestrzegania tych zasad, w tym między innymi:
+                </p>
+
+                <p>1. Zakaz wykorzystywania narzędzia do tworzenia treści, które są nielegalne, szkodliwe, wprowadzające
+                    w błąd lub łamiące prawa osób trzecich.
+                </p>
+                <p>2. Przestrzeganie przepisów dotyczących ochrony danych osobowych i prywatności, jeśli takie dane są
+                    przetwarzane.</p>
+                <p>3. Świadomość, że generowane treści mogą zawierać nieścisłości i powinny być traktowane jedynie jako
+                    inspiracja, a nie gotowe rozwiązanie.</p>
+
+                <p>Zachęcamy do zapoznania się z pełnym regulaminem korzystania z chat GPT, dostępnym na stronie OpenAI,
+                    który obowiązuje wszystkich użytkowników korzystających z naszego narzędzia.</p>
+            </div>
+
+            <h3 class="termsOfUse-point">III. Polityka prywatności</h3>
+
+            <div class="termsOfUse__subsections">
+
+                <p>Klauzula informacyjna dla klienta
+                </p>
+
+                <p>Zgodnie z art. 13 rozporządzenia Parlamentu Europejskiego i Rady (UE) 2016/679 z dnia 27 kwietnia
+                    2016 r. w sprawie ochrony osób fizycznych w związku z przetwarzaniem danych osobowych i w sprawie
+                    swobodnego przepływu takich danych oraz uchylenia dyrektywy 95/46/WE (Dz. Urz. UE L 119/1 z
+                    04.05.2016), zwanego dalej „RODO”, informujemy, że:</p>
+
+                <p>1. Administrator Pani/Pana danych osobowych może udostępnić swoje pełne dane na życzenie osoby,
+                    której dane dotyczą, po wcześniejszej weryfikacji tożsamości osoby wnioskującej. W standardowych
+                    przypadkach kontakt z administratorem możliwy jest poprzez dedykowany adres e-mail:
+                    support@nhardwork.com.
+                </p>
+                <p>2. Kontakt z Inspektorem Ochrony Danych możliwy jest pod adresem:support@nhardwork.com.
+                </p>
+                <p>3. Pani/Pana dane osobowe przetwarzane będą w celu realizacji umowy – na podstawie art. 6 ust. 1 lit.
+                    b RODO.</p>
+
+                <p>4. Odbiorcami Pani/Pana danych osobowych będą wyłącznie podmioty uprawnione do uzyskania danych na
+                    podstawie przepisów prawa.</p>
+
+                <p>5. Pani/Pana dane osobowe przechowywane będą w oparciu o uzasadniony interes realizowany przez
+                    administratora.</p>
+
+                <p>6. Pani/Pana dane osobowe przechowywane będą przez okres trwania niniejszej umowy, a po jej
+                    wygaśnięciu lub rozwiązaniu przez okres niezbędny do ustalenia, dochodzenia lub obrony roszczeń
+                    związanych z niniejszą umową.</p>
+
+                <p>7. Posiada Pani/Pan prawo do żądania od administratora dostępu do danych osobowych, ich sprostowania,
+                    usunięcia lub ograniczenia przetwarzania, prawo do wniesienia sprzeciwu wobec przetwarzania, prawo
+                    do przenoszenia danych oraz prawo do cofnięcia zgody na przetwarzanie danych w dowolnym momencie.
+                </p>
+
+                <p>8. Ma Pani/Pan prawo wniesienia skargi do organu nadzorczego.
+                </p>
+
+                <p>9. Podanie danych osobowych jest dobrowolne, jednakże odmowa podania danych może skutkować odmową
+                    zawarcia umowy.
+                </p>
+
+                <p>Nasza aplikacja korzysta z technologii chat GPT, co oznacza, że użytkowanie serwisu obejmuje także
+                    zasady polityki prywatności określone przez OpenAI. Użytkownicy są zobowiązani do przestrzegania
+                    tych zasad, które regulują, w jaki sposób dane osobowe są przetwarzane przez OpenAI podczas
+                    korzystania z chat GPT. Zasady te obejmują między innymi:
+                </p>
+
+                <p>1. Zasady dotyczące zbierania i przechowywania danych, które są przetwarzane przez chat GPT.
+                </p>
+
+                <p>2. Środki bezpieczeństwa wprowadzone w celu ochrony prywatności użytkowników i zapobiegania
+                    nieautoryzowanemu dostępowi do danych.</p>
+
+                <p>3. Obowiązki użytkowników dotyczące przetwarzania danych osobowych zgodnie z obowiązującymi
+                    przepisami, takimi jak RODO czy CCPA.</p>
+
+                <p>Zachęcamy do zapoznania się z pełną polityką prywatności OpenAI, która obowiązuje wszystkich
+                    użytkowników korzystających z naszego narzędzia.</p>
+
+            </div>
+
+            <h3 class="termsOfUse-point">IV. Odpowiedzialność użytkownika za dane wejściowe i wyjściowe</h3>
+
+            <div class="termsOfUse__subsections">
+                <p>Użytkownik ponosi odpowiedzialność za wprowadzane tematy i cele dokumentów.</p>
+                <p> Użytkownik zobowiązuje
+                    się,
+                    że dane wejściowe nie będą zawierały wrażliwych ani szkodliwych informacji. Wyniki generowane przez
+                    model GPT mają charakter informacyjny i referencyjny, a użytkownik powinien zweryfikować ich
+                    poprawność
+                    przed ich wykorzystaniem. Usługa nie powinna być traktowana jako ostateczne źródło decyzji prawnych,
+                    biznesowych ani zawodowych.</p>
+
+                <p>Korzystając z naszych usług, użytkownik rozumie i zgadza się, że:</p>
+
+
+
+                <p>1. Dane wyjściowe nie zawsze mogą być dokładne. Nie należy polegać na wynikach z naszych usług jako
+                    jedynym źródle prawdy lub informacji faktycznych ani jako substytucie profesjonalnej porady.
+                </p>
+
+                <p>2. Przed użyciem lub udostępnieniem wyników uzyskanych za pomocą usług należy ocenić ich dokładność i
+                    adekwatność do konkretnego przypadku użycia, w tym, w stosownych przypadkach, przeprowadzić recenzję
+                    ludzką.
+                </p>
+
+                <p>3. Nie wolno używać żadnych danych wyjściowych dotyczących danej osoby w żadnym celu, który mógłby
+                    mieć
+                    prawne lub materialne konsekwencje dla tej osoby, np. w celu podejmowania decyzji dotyczących
+                    kredytu,
+                    edukacji, zatrudnienia, mieszkania, ubezpieczenia, kwestii prawnych, medycznych lub innych ważnych
+                    decyzji na jej temat.
+                </p>
+
+                <p>4. Nasze usługi mogą dostarczać niekompletne, nieprawidłowe lub obraźliwe dane wyjściowe.
+                </p>
+            </div>
+
+            <h3 class="termsOfUse-point">V. Zrzeczenie się odpowiedzialności</h3>
+
+            <div class="termsOfUse__subsections">
+                <p>Operator serwisu nie ponosi odpowiedzialności za błędy, nieścisłości ani nieodpowiednie treści
+                    wynikające z działania sztucznej inteligencji. Treści generowane są przez model GPT. Korzystając z
+                    usług, użytkownik akceptuje, że wyniki generowane przez model GPT mogą zawierać nieścisłości.
+                    Operator nie ponosi odpowiedzialności za jakiekolwiek szkody powstałe w wyniku używania
+                    wygenerowanych treści.
+                </p>
+            </div>
+
+            <h3 class="termsOfUse-point">VI. Własność intelektualna i prawa autorskie</h3>
+
+            <div class="termsOfUse__subsections">
+                <p>Użytkownik zachowuje prawa własności do wprowadzanych danych wejściowych, jednak własność treści
+                    generowanych może się różnić. Wygenerowane treści mają być traktowane jako inspiracja, na podstawie
+                    której można stworzyć finalny dokument, a nie jako gotowy dokument. Użytkownik jest zachęcany do
+                    modyfikowania wyników poprzez dodanie własnego wkładu, co może zwiększyć możliwość objęcia treści
+                    prawami autorskimi. Operator serwisu nie gwarantuje, że treści wygenerowane przez AI będą chronione
+                    prawami autorskimi we wszystkich jurysdykcjach.
+
+                </p>
+            </div>
+
+            <h3 class="termsOfUse-point">VII. Zakończenie i zmiany usług</h3>
+
+            <div class="termsOfUse__subsections">
+                <p>Operator zastrzega sobie prawo do zawieszenia lub zakończenia dostępu do usługi w przypadku
+                    naruszenia warunków korzystania lub w sytuacji wynikającej z konieczności prawnej lub technicznej.
+                    Użytkownik zostanie poinformowany o takich zmianach, a obowiązki dotyczące poufności pozostaną w
+                    mocy po zakończeniu korzystania z usługi.
+                </p>
+            </div>
+
+            <h3 class="termsOfUse-point">VIII. Ograniczenie odpowiedzialności za niewłaściwe korzystanie</h3>
+
+            <div class="termsOfUse__subsections">
+                <p>Operator serwisu nie ponosi odpowiedzialności za wykorzystanie narzędzia w sposób inny niż
+                    przeznaczony, czyli poza wprowadzaniem tematów i celów oraz generowaniem fragmentów dokumentów.
+                    Jakiekolwiek próby użycia narzędzia do innych celów są zabronione i mogą skutkować zablokowaniem
+                    dostępu do usługi. Wyniki generowane nie zastępują profesjonalnych porad ani dokumentów prawnych, a
+                    użytkownik powinien dokonać weryfikacji wygenerowanych treści przed ich dalszym wykorzystaniem.
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<script src="{% static 'js/termsOfUse/tooltip.js' %}"></script>
+
+{% endblock content %}

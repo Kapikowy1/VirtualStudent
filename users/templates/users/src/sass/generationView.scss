@@ -1,0 +1,63 @@
+@use './utilities/colors';
+@use './utilities/mixins';
+
+.generationView {
+	@include mixins.headerSection;
+	@include mixins.heroImages;
+	flex-direction: column;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		text-align: start;
+		padding: 1em;
+		margin: 1.5em;
+		width: 80%;
+		margin-left: 10%;
+		border-radius: 20px;
+		background-color: colors.$white;
+		color: colors.$dark;
+
+		&-text {
+			font-weight: 700;
+			margin-left: 0.5em;
+			font-size: 1.2rem;
+
+			span {
+				font-weight: 300;
+			}
+		}
+	}
+
+	&__buttons {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+
+		a,
+		button {
+			margin: 0.5em 0.5em;
+		}
+
+		a {
+			font-family: 'Roboto', sans-serif;
+			border: none;
+			background-color: colors.$white;
+			font-weight: 700;
+			font-size: 1.5rem;
+			padding: 0.5em;
+			border-radius: 20px;
+			transition: background-color 0.5s ease;
+			color: colors.$dark;
+
+			&:hover,
+			&:focus {
+				background-color: colors.$blue;
+				outline: none;
+			}
+		}
+	}
+}
+
+@import './utilities/sizes/generationView/media.scss';

@@ -1,0 +1,21 @@
+@use './utilities/colors';
+@use './utilities/mixins';
+
+.login {
+	@include mixins.heroImages;
+	@include mixins.registerLogin;
+
+	.login__box .login__box-errorText {
+		font-size: 1rem;
+		visibility: hidden;
+
+		color: colors.$red;
+		font-weight: bold;
+	}
+
+	.login__box .login__box--vissible {
+		visibility: visible;
+	}
+}
+
+@import './utilities/sizes/login/media.scss';

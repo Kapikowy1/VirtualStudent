@@ -1,0 +1,314 @@
+@media (min-width: 330px) {
+	.nav {
+		&__rightPanel {
+			&-nickname {
+				font-size: 1.15rem;
+			}
+
+			&-text {
+				font-size: 1.2rem;
+
+				span {
+					font-size: 2.5rem;
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: 450px) {
+	.nav {
+		&__rightPanel {
+			&-nickname {
+				font-size: 1.5rem;
+			}
+
+			&-text {
+				font-size: 1.7rem;
+
+				span {
+					font-size: 3rem;
+				}
+			}
+
+			a {
+				font-size: 2rem;
+			}
+		}
+	}
+
+	.messages {
+		font-size: 2rem;
+		width: 65%;
+
+		&-icon {
+			width: 25px;
+		}
+	}
+
+	.errorMessage {
+		font-size: 2rem;
+	}
+}
+
+@media (min-width: 700px) {
+	.nav {
+		// height: 11rem;
+
+		&__leftBox {
+			&-logo {
+				width: 6rem;
+				margin: 1em;
+			}
+
+			&-burger {
+				button {
+					svg {
+						width: 7rem;
+						height: 7rem;
+					}
+				}
+			}
+		}
+		&__rightBox {
+			&-account {
+				button {
+					svg {
+						width: 4rem;
+						height: 4rem;
+					}
+				}
+			}
+		}
+
+		&__secondContainer {
+			height: 80vh;
+		}
+
+		&__leftPanel {
+			width: 50%;
+		}
+
+		&__leftPanelNav {
+			a {
+				font-size: 4rem;
+
+				transition: color 0.3s;
+
+				&:hover,
+				&:focus {
+					width: 100%;
+					outline: none;
+				}
+			}
+		}
+
+		&__leftPanelSocials {
+			&-icon {
+				padding: 0 1em;
+				svg {
+					width: 5rem;
+					height: 5rem;
+				}
+			}
+		}
+
+		&__rightPanel {
+			&-nickname {
+				font-size: 2.45rem;
+				margin-bottom: 0.3em;
+			}
+
+			&-confirmAllert {
+				p {
+					font-size: 2rem;
+				}
+			}
+
+			&-email {
+				margin-top: 0.4em;
+
+				input {
+					font-size: 2.5rem;
+				}
+				svg {
+					width: 4rem;
+					height: 4rem;
+				}
+			}
+
+			&-text {
+				font-size: 2.5rem;
+
+				span {
+					font-size: 4.5rem;
+				}
+			}
+
+			a {
+				font-size: 3rem;
+			}
+		}
+
+		// .nav {
+		// 	height: 11rem;
+
+		// 	&-container {
+		// 		height: 11rem;
+		// 	}
+
+		// 	&__box {
+		// 		top: 2rem;
+		// 		margin: 0 2em;
+		// 	}
+
+		// 	&__leftBox {
+		// 		img {
+		// 			width: 7rem;
+		// 		}
+
+		// 		&-navIcon {
+		// 			height: 7rem;
+		// 			left: 6.5em;
+		// 			padding: 0 0.3em;
+		// 		}
+		// 	}
+
+		// 	&__rightBox {
+		// 		font-size: 3rem;
+
+		// 		&-emailAllert {
+		// 			svg {
+		// 				width: 50px;
+		// 				height: 50px;
+		// 			}
+		// 		}
+		// 	}
+
+		// 	&__logged {
+		// 		// height: 50vh;
+
+		// 		&-item {
+		// 			font-size: 3rem;
+		// 		}
+		// 	}
+		// }
+	}
+
+	.footer {
+		&__icons {
+			margin-top: -1.5em;
+		}
+
+		&-icon {
+			a {
+				padding: 0.2em 1em;
+			}
+		}
+	}
+
+	.messages {
+		font-size: 2.5rem;
+	}
+
+	.errorMessage {
+		top: 20%;
+		height: 15%;
+		padding: 0 1.5em;
+	}
+}
+
+@media (min-width: 800px) {
+	.footer {
+		font-size: 2rem;
+		// height: 6vh;
+	}
+}
+
+@media (min-width: 860px) {
+	.nav {
+		&__leftPanel {
+			width: 30%;
+			margin-right: 20%;
+		}
+		&__rightPanel {
+			width: 30%;
+			margin-left: 20%;
+		}
+	}
+
+	.messages {
+		font-size: 3rem;
+	}
+
+	.errorMessage {
+		padding: 0 0.5em;
+		width: 50%;
+		font-size: 2rem;
+	}
+}
+
+@media (min-width: 1200px) {
+	.nav {
+		&__leftPanel {
+			position: absolute;
+			left: 0;
+			width: 30%;
+		}
+		&__rightPanel {
+			position: absolute;
+			right: 0;
+			width: 30%;
+
+			&-nickname {
+				font-size: 3rem;
+			}
+		}
+	}
+}
+
+@media (min-width: 1750px) {
+	.nav {
+		&__leftBox {
+			&-burger {
+				display: none;
+			}
+		}
+
+		&__leftPanel {
+			left: calc((100vw - 1750px) / 4);
+			width: 15%;
+			transform: translateX(0);
+		}
+
+		&__rightBox {
+			&-account {
+				display: none;
+			}
+		}
+
+		&__rightPanel {
+			right: calc((100vw - 1750px) / 7);
+			width: 15%;
+			transform: translateX(0);
+		}
+	}
+}
+
+@media (min-width: 1800px) {
+	// .nav {
+	// 	&__logged {
+	// 		// margin-top: -11vh;
+	// 		margin-left: calc(((100vw - 1200px) / 2) - 1em);
+	// 		border-radius: 20px;
+
+	// 		&--blur {
+	// 			border-radius: 5px;
+	// 		}
+	// 	}
+
+	// 	&__leftBox-navIcon {
+	// 		display: none;
+	// 	}
+	// }
+}

@@ -1,0 +1,176 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Generowanie - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/generationViewFile.css' %}">
+</head>
+
+<header class="generationView">
+
+    <div class="wrapper">
+
+        <div class="generationView__wrapper">
+
+            <div class="generationView__box">
+
+                <h1 class="section-heading">Dziękujemy za skorzystanie z aplikacji</h1>
+
+                <p>Twoja inspiracja jest już tworzona przez asystenta może to potrwać <span id="estimated_time"></span>
+                    minut,
+                    po zakończeniu pracy zostanie przesłana na adres e-mail:
+                </p>
+
+                <div class="generationView__box-email">
+
+                    <input class="generationView__box-getEmail" type="password" value="{{user.email}}" readonly>
+                    <button>
+                        <svg id="emailToggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-eye">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                            <path
+                                d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+                        </svg>
+                    </button>
+
+                </div>
+
+                <div class="generationView__box-queue">
+                    <p>
+                        Aktualna pozycja w kolejce: <span id="spot_in_queue"></span>
+                    </p>
+                    <form action="{% url 'refresh_generation_view_file' %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit">Odśwież</button>
+                    </form>
+                </div>
+
+                <p class="generationView__box-quit">(Możesz zamknąć tę stronę)</p>
+
+
+                <p class="generationView__box-end">// Zespół !hardWork</p>
+
+            </div>
+
+            <div class="generationView__soon">
+
+                <p class="generationView__soon-title">Już wkrótce!</p>
+
+                <a href="#files">
+                    <div class="generationView__soon-arrow">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#e0e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-down">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M12 5l0 14" />
+                            <path d="M18 13l-6 6" />
+                            <path d="M6 13l6 6" />
+                        </svg>
+                    </div>
+                </a>
+
+            </div>
+</header>
+
+<section class="files" id="files">
+
+
+    <div class="wrapper">
+
+        <h2 class="section-heading">Już wkrótce!</h2>
+
+        <div class="files__gallery">
+
+            <div class="files__box">
+                <h2 class="files__title">Jak pomaga nam AI w naszej rzeczywistości</h2>
+                <div class="files__box-pdf" data-name="Jak pomaga nam AI w naszej rzeczywistości"
+                    data-src="{% static 'pdf/Jak pomaga nam AI w naszej rzeczywistości.pdf' %}">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000"
+                        class="icon icon-tabler icons-tabler-filled icon-tabler-file">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z" />
+                        <path d="M19 7h-4l-.001 -4.001z" />
+                    </svg>
+                </div>
+            </div>
+            <div class="files__box">
+                <h2 class="files__title">Zdrowy styl życia</h2>
+                <div class="files__box-pdf" data-name="Zdrowy styl życia"
+                    data-src="{% static 'pdf/Zdrowy styl życia.pdf' %}"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="#000000"
+                        class="icon icon-tabler icons-tabler-filled icon-tabler-file">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z" />
+                        <path d="M19 7h-4l-.001 -4.001z" />
+                    </svg></div>
+            </div>
+            <div class="files__box">
+                <h2 class="files__title">Jak pomaga nam AI w naszej rzeczywistości</h2>
+                <div class="files__box-pdf" data-name="Jak pomaga nam AI w naszej rzeczywistości"
+                    data-src="{% static 'pdf/Jak pomaga nam AI w naszej rzeczywistości.pdf' %}"><svg
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="#000000"
+                        class="icon icon-tabler icons-tabler-filled icon-tabler-file">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z" />
+                        <path d="M19 7h-4l-.001 -4.001z" />
+                    </svg></div>
+            </div>
+            <div class="files__box">
+                <h2 class="files__title">Zdrowy styl życia</h2>
+                <div class="files__box-pdf" data-name="Zdrowy styl życia"
+                    data-src="{% static 'pdf/Zdrowy styl życia.pdf' %}"><svg xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="#000000"
+                        class="icon icon-tabler icons-tabler-filled icon-tabler-file">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path
+                            d="M12 2l.117 .007a1 1 0 0 1 .876 .876l.007 .117v4l.005 .15a2 2 0 0 0 1.838 1.844l.157 .006h4l.117 .007a1 1 0 0 1 .876 .876l.007 .117v9a3 3 0 0 1 -2.824 2.995l-.176 .005h-10a3 3 0 0 1 -2.995 -2.824l-.005 -.176v-14a3 3 0 0 1 2.824 -2.995l.176 -.005h5z" />
+                        <path d="M19 7h-4l-.001 -4.001z" />
+                    </svg></div>
+            </div>
+
+
+
+        </div>
+
+        <div class="files__preview">
+
+            <div class="files__details">
+                <div class="files__details-title">
+                    <span>
+                        <p class="files__details-titleName">Nie określono</p>
+                    </span>
+                </div>
+                <div class="files__details-close">
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M18 6l-12 12" />
+                            <path d="M6 6l12 12" />
+                        </svg>
+                    </span>
+                </div>
+            </div>
+            <div class="files__fullPdf" scrolling="yes"><iframe src=""></iframe></div>
+
+        </div>
+
+    </div>
+
+    <div class="shadow"></div>
+</section>
+
+<script src="{% static 'js/generationViewFile/queue.js' %}"></script>
+<script src="{% static 'js/generationViewFile/showEmail.js' %}"></script>
+<script src="{% static 'js/generationViewFile/files.js' %}"></script>
+
+
+{% endblock content %}

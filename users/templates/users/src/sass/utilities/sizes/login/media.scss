@@ -1,0 +1,54 @@
+@media (min-width: 450px) {
+	.login {
+		h2 {
+			margin-top: 2em;
+		}
+
+		&__box {
+			padding: 0.5em;
+			width: 60%;
+			margin-left: 20%;
+
+			label,
+			input {
+				font-size: 2rem;
+			}
+		}
+
+		.login__box .login__box-errorText {
+			font-size: 1.3rem;
+		}
+
+		&__bottom {
+			font-size: 1.8rem;
+		}
+		button {
+			font-size: 2rem;
+		}
+	}
+}
+
+@media (min-width: 1020px) {
+	.login {
+		&__box {
+			width: 50%;
+			margin-left: 25%;
+
+			label,
+			input {
+				font-size: 3rem;
+			}
+		}
+
+		.login__box .login__box-errorText {
+			font-size: 1.7rem;
+		}
+
+		&__bottom {
+			font-size: 2.5rem;
+		}
+		button {
+			font-size: 3rem;
+		}
+	}
+}

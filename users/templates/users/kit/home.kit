@@ -1,0 +1,103 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>HOME - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/home.css' %}">
+</head>
+
+
+<header class="header">
+
+    <div class="wrapper">
+        <p class="header-text header-text--top">!hardWork</p>
+
+        <h1 class="header-heading">Z nami <br>zaoszczędzisz<br> czas</h1>
+
+        <p class="header-text header-text--bottom">Projekty uczelniane to nasza specjalność</p>
+
+        <a href="#about">
+            <div class="header__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#e0e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-down">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 5l0 14" />
+                    <path d="M18 13l-6 6" />
+                    <path d="M6 13l6 6" />
+                </svg>
+            </div>
+        </a>
+    </div>
+</header>
+
+<section id="about" class="about section-padding">
+
+    <div class="wrapper">
+
+        <h2 class="section-heading">O aplikacji</h2>
+
+        <div class="about__box">
+
+            <div class="about__box-img">
+                <img src="../../static/img/tree.webp" alt="Cyfrowe drzewko" class="about-img">
+            </div>
+
+            <div class="about__box-text">
+
+                <p class="about-text about-text--first">Czy masz już gotowy temat i znasz swój cel ale nie wiesz jak
+                    zacząć?
+                    Odczuwasz frustrację z powodu swojej bezradności?
+                    Nie przejmuj się już tym więcej!
+                    Dzięki naszemu rozwiązaniu możesz szybko rozpocząć działanie i czerpać inspirację przy użyciu
+                    naszego produktu.</p>
+                <p class="about-text">Wystarczy wpisać temat i cel projektu, a w kilka chwil otrzymasz kompletny szablon
+                    wraz z
+                    inspirującymi wstępami, treściami głównymi i efektownymi zakończeniami. To więcej niż tylko
+                    narzędzie - to przyspieszenie Twojej kreatywności i skuteczności. Gotowy, by zabrać się do dzieła?
+                    Odkryj, jak łatwo możesz osiągnąć swoje cele dzięki naszej platformie!</p>
+
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+{% if not user.is_authenticated %}
+<section class="signUp section-padding">
+
+    <div class="wrapper">
+
+        <div class="signUp__wrapper">
+
+            <h2 class="signUp__wrapper-heading section-heading">Przekonaj się <br>jakie to proste!</h2>
+
+            <div class="signUp__wrapper-text">
+                <p>Zarejestruj się i stwórz <br>swój pierwszy projekt!</p>
+            </div>
+
+
+            <a href="{% url 'register_view' %}" class=" signUp__wrapper-btn" tabindex="0">
+                Zarejestruj się!
+            </a>
+
+
+        </div>
+    </div>
+</section>
+{% endif %}
+
+<!-- {% if disable_specific_js %} -->
+<script src="{% static 'js/base/toastNotification.js' %}"></script>
+<!-- {% endif %} -->
+
+{% if user.is_authenticated %}
+<!-- <script src="{% static 'js/home/navHome.js' %}"></script> -->
+{% endif %}
+
+
+
+{% endblock content %}

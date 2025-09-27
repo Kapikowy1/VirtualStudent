@@ -1,0 +1,91 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>DASHBOARD - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/dashboard.css' %}">
+</head>
+
+<header class="dashboard">
+
+    <div class="wrapper">
+
+        <form class="dashboard-form" action="{% url 'generation_view' %}" method="post">
+
+            {% csrf_token %}
+
+            <h2 class="section-heading section-heading--dashboard">Stwórz inspiracje Twojego projektu</h2>
+
+            <div class="dashboard__box">
+                <label for="id_topic" required>Podaj temat Twojego projektu <svg onclick="void(0)"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-question dashboard__tooltip-icon dashboard__tooltip-icon--topic">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                        <path d="M10 13l0 .01" />
+                        <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474" />
+                    </svg></label>
+                <span class="dashboard__tooltip-text dashboard__tooltip-text--topic wrapper">
+                    Temat powinien zawierać od 15 do 150 znaków i może zawierać wyłącznie litery oraz cyfry.
+                </span>
+                <textarea type="text" id="id_topic" name="topic" placeholder="Podaj temat" minLength="15"
+                    maxLength="150" title="Uzupełnij temat projektu" class="textarea-topic">{{topic}}</textarea>
+
+                <p class="dashboard__box-errorText">Temat projektu</p>
+            </div>
+
+            <div class="dashboard__box">
+                <label for="id_purpose">Podaj cel projektu <svg onclick="void(0)" xmlns="http://www.w3.org/2000/svg"
+                        width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-zoom-question dashboard__tooltip-icon dashboard__tooltip-icon--purpose">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M10 10m-7 0a7 7 0 1 0 14 0a7 7 0 1 0 -14 0" />
+                        <path d="M21 21l-6 -6" />
+                        <path d="M10 13l0 .01" />
+                        <path d="M10 10a1.5 1.5 0 1 0 -1.14 -2.474" />
+                    </svg></label>
+                <span class="dashboard__tooltip-text dashboard__tooltip-text--purpose wrapper">
+                    Cel powinien zawierać od 20 do 470 znaków i może zawierać litery, cyfry oraz następujące znaki
+                    specjalne:
+                    .,.
+                    Porady dotyczące sformułowania precyzyjnego prompta:
+                    <ul>
+
+                        <li>Szczegółowo określ kontekst i dziedzinę naukową, koncentrując się na istotnych
+                            elementach,
+                        </li>
+                        <li>Zdefiniuj obszar badawczy, np. grupę docelową, sektor lub środowisko analizy,</li>
+                        <li>Skoncentruj się na jednym głównym celu do osiągnięcia,</li>
+                        <li>Uwzględnij planowane metody badawcze oraz oczekiwane rezultaty,</li>
+                        <li>Wyraź jasno, czy celem jest analiza, identyfikacja, czy rozwiązanie problemu,</li>
+                        <li>Określ zakres pracy i wszelkie istotne ograniczenia,</li>
+                        <li>Unikaj zbędnych powtórzeń i ogólników, zachowując spójność i logikę wypowiedzi.</li>
+                    </ul>
+                </span>
+                <textarea type="text" id="id_purpose" name="purpose" placeholder="Podaj cel" minLength="20"
+                    maxLength="470" title="Uzupełnij cel projektu" class="textarea-purpose">{{purpose}}</textarea>
+                <p class="dashboard__box-errorText">Cel projektu</p>
+            </div>
+
+            <button class="dashboard-btn" id="dashboard__control-button-send" type="submit">Dalej</button>
+
+
+
+
+        </form>
+
+
+    </div>
+
+</header>
+
+
+<script src="{% static 'js/dashboard/dashboardErrorHandler.js' %}"></script>
+<script src="{% static 'js/dashboard/dashboardTooltip.js' %}"></script>
+
+
+{% endblock content %}

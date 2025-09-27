@@ -1,0 +1,205 @@
+@use './utilities/colors';
+@use './utilities/animations';
+@use './utilities/mixins';
+
+.header {
+	@include mixins.headerSection;
+
+	// @include mixins.heroImages('../img/header_mini.jpg');
+	@include mixins.heroImages;
+
+	&-heading {
+		font-size: 3rem;
+		margin: 1em;
+		background: linear-gradient(
+			to right bottom,
+			rgb(239, 233, 244),
+			rgb(239, 233, 244) 25%,
+			rgb(155, 173, 253) 50%,
+			rgb(136, 152, 221) 60%,
+			rgb(239, 233, 244) 75%
+		);
+		-webkit-background-clip: text; // For Safari and older versions of Chrome
+		background-clip: text; // Standard property
+		-moz-background-clip: text; // For Firefox
+		-ms-background-clip: text; // For IE/Edge
+		-o-background-clip: text; // For Opera
+		color: transparent;
+		filter: sepia(0);
+	}
+
+	&-text {
+		font-size: 1.4rem;
+		color: colors.$blue;
+
+		&--top {
+			margin-top: -4em;
+		}
+	}
+
+	&__arrow {
+		position: absolute;
+		border: 2px solid colors.$white;
+		border-radius: 50%;
+		left: 50%;
+		transform: translateX(-50%);
+		padding: 1em;
+		margin-top: 1em;
+
+		svg {
+			width: 4rem;
+			height: 4rem;
+		}
+
+		&::before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			content: '';
+			width: 100%;
+			height: 100%;
+			border: 2px solid colors.$white;
+			border-radius: 50%;
+			animation: pulseArrow 2s infinite;
+		}
+	}
+}
+
+.about {
+	background-color: colors.$white;
+	color: colors.$dark;
+	z-index: -4;
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		margin: 4em 0;
+	}
+	&-img {
+		width: 100%;
+		margin-bottom: 1em;
+		border-radius: 50%;
+		filter: drop-shadow(10px 5px 10px #232323);
+		transition: filter 0.5s;
+
+		&:hover {
+			filter: drop-shadow(10px 5px 10px #09203f);
+		}
+	}
+	&-text {
+		font-size: 1.8rem;
+
+		&--first {
+			font-weight: 700;
+			margin-bottom: 2em;
+		}
+	}
+}
+
+.creators {
+	background-color: colors.$white;
+	padding-bottom: 3em;
+	z-index: 0;
+
+	&-heading {
+		color: colors.$dark;
+		margin-top: -1%;
+	}
+
+	&__field {
+		margin-top: 45%;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		position: relative; /* Ustawiamy pozycję względną */
+		background-color: colors.$main_color;
+		border-radius: 15px;
+		margin: 0 1em;
+	}
+
+	&__boxes {
+		overflow: hidden; /* Zapobiega wyświetlaniu tła poza kontenerem */
+		z-index: 0;
+		margin: -35% 5em 40%;
+
+		img {
+			width: 100%;
+		}
+
+		&-img {
+			position: relative; /* Ustawiamy pozycję względną */
+			padding: 0.2em;
+
+			&::before {
+				content: ''; /* Dodajemy pusty pseudo-element */
+				position: absolute; /* Ustawiamy pozycję absolutną */
+				bottom: 0; /* Ustawiamy na górze */
+				left: 0; /* Ustawiamy na lewo */
+				width: 100%; /* Szerokość 100% */
+				height: 72%; /* Wysokość 60% */
+				background-color: colors.$main_colors_lighter; /* Kolor tła */
+				z-index: -1; /* Umieszczamy pod innymi elementami */
+				transition: background-color 0.5s ease; /* Dodajemy płynne przejście */
+				border-radius: 15px;
+			}
+
+			&:hover::before {
+				background-color: colors.$main_color_hover;
+			}
+		}
+	}
+
+	&-text {
+		font-size: 2.5rem;
+		margin-top: 1em;
+
+		&--first {
+			font-weight: 700;
+		}
+		&--last {
+			margin-bottom: 2em;
+		}
+		&--finish {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.signUp {
+	background-color: colors.$blue;
+	color: colors.$dark;
+
+	&__wrapper {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		align-items: center;
+		justify-content: center;
+
+		&-text {
+			font-size: 2rem;
+			margin: 1em 0;
+		}
+
+		&-btn {
+			margin-top: 1em;
+			padding: 0.4em 1em;
+			font-size: 1.8rem;
+			background: colors.$white;
+			border-radius: 15px;
+			color: colors.$dark;
+			font-weight: 700;
+			position: relative;
+			transition: background-color 0.1s;
+			overflow: hidden;
+			z-index: 3;
+			cursor: pointer;
+			animation: pulse 2s infinite alternate;
+		}
+	}
+}
+@import './utilities/sizes/home/media.scss';

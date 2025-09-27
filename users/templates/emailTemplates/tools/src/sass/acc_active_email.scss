@@ -1,0 +1,42 @@
+@use './utilities/colors';
+@use './utilities/components';
+@use './utilities/logo';
+@use './utilities/footer';
+
+.thanks {
+	text-align: center;
+	margin-bottom: 1em;
+
+	h1 {
+		text-transform: none;
+	}
+
+	&-text {
+		font-size: 1.5rem;
+		padding: 0.8em;
+		margin-top: -0.5em;
+		margin-bottom: 0.7em;
+	}
+
+	&-btn {
+		padding: 0.4em 1em;
+
+		font-size: 1.8rem;
+		background: colors.$white;
+		border-radius: 15px;
+		color: colors.$dark;
+		// text-transform: uppercase;
+		font-weight: 700;
+
+		position: relative;
+		transition: background-color 0.3s;
+		overflow: hidden;
+		z-index: 3;
+
+		&:hover {
+			background-color: colors.$blue;
+		}
+	}
+}
+
+// @import './utilities/sizes/demo_bachelor_email/media.scss';

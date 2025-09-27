@@ -1,0 +1,65 @@
+{% extends "users/base.html" %} 
+{% load static %}
+
+{% block content %}
+<head>
+    <title>Generowanie - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/generationView.css' %}">
+</head>
+
+<header class="generationView">
+    <div class="wrapper">
+        <h2 class="section-heading">Podsumowanie</h2>
+
+        <div class="generationView__box">
+            <p class="generationView__box-text">Temat: <span>{{ topic }}</span></p>
+        </div>
+        <div class="generationView__box">
+            <p class="generationView__box-text">Cel: <span>{{ purpose }}</span></p>
+        </div>
+
+        <div class="generationView__buttons">
+            <div>
+                <a href="{% url 'dashboard_view' %}">Cofnij</a>
+            </div>
+
+            <!-- Formularz MVP -->
+            <form id="id_generateFormMVP" action="{% url 'generateBachelor' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" id="check_duplicate_hidden_mvp" name="check_duplicate" value="0">
+                <button id="id_generateButton">Generuj MVP</button>
+            </form>
+
+            <!-- Formularz pełnej wersji -->
+            <form id="id_generateFormFull" action="{% url 'genFullVersion' %}" method="post">
+                {% csrf_token %}
+                <input type="hidden" id="check_duplicate_hidden_full" name="check_duplicate" value="0">
+                <button id="id_generateButton">Generuj pełną wersję</button>
+            </form>
+        </div>
+
+        <!-- Wspólny checkbox -->
+        <label for="check_duplicate" class="register__box-checkbox">
+            <input type="checkbox" class="register__box-consentCheckbox" id="check_duplicate" 
+                   name="check_duplicate" value="0">
+            <span class="register__box-consentText">Zignoruj zduplikowany temat</span>
+        </label>
+    </div>
+</header>
+
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const checkDuplicate = document.getElementById("check_duplicate");
+        const hiddenInputMVP = document.getElementById("check_duplicate_hidden_mvp");
+        const hiddenInputFull = document.getElementById("check_duplicate_hidden_full");
+
+        checkDuplicate.addEventListener("change", () => {
+            const value = checkDuplicate.checked ? "1" : "0";
+            console.log(value)
+            hiddenInputMVP.value = value;
+            hiddenInputFull.value = value;
+        });
+    });
+</script>
+
+{% endblock content %}

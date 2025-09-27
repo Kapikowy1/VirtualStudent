@@ -1,0 +1,81 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>TWÓRCY - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/creators.css' %}">
+</head>
+
+
+<header class="header">
+
+    <div class="wrapper">
+        <p class="header-text header-text--top">!hardWork</p>
+
+        <h1 class="header-heading">Twórcy</h1>
+
+        <a href="#creators">
+            <div class="header__arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                    stroke="#e0e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                    class="icon icon-tabler icons-tabler-outline icon-tabler-arrow-down">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                    <path d="M12 5l0 14" />
+                    <path d="M18 13l-6 6" />
+                    <path d="M6 13l6 6" />
+                </svg>
+            </div>
+        </a>
+
+    </div>
+</header>
+
+<section id="creators" class="creators">
+    <div class="wrapper">
+
+        <div class="creators__box">
+
+            <div class="creators__box-img">
+                <img src="../../static/img/rafal.jpeg" alt="Rafał Bartochowski" class="creators__img">
+            </div>
+            <div class="creators__box-text">
+                <h2 class="creators__title">Rafał Bartochowski</h2>
+                <p class="creators__text">Frontend </br> UX / UI</p>
+            </div>
+
+        </div>
+
+        <div class="creators__box">
+
+            <div class="creators__box-img creators__box-img--right">
+                <img src="../../static/img/damian.png" alt="Damian Cierlak" class="creators__img">
+            </div>
+            <div class="creators__box-text creators__box-text--right">
+                <h2 class="creators__title">Damian Cierlak</h2>
+                <p class="creators__text">Machine </br>
+                    Learning </p>
+            </div>
+
+        </div>
+
+
+        <div class="creators__box">
+
+            <div class="creators__box-img">
+                <img src="../../static/img/kacper.png" alt="Kacper Dolecki" class="creators__img">
+            </div>
+            <div class="creators__box-text">
+                <h2 class="creators__title">Kacper Dolecki</h2>
+                <p class="creators__text">Full </br> Stack</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+{% endblock content %}

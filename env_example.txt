@@ -1,0 +1,9 @@
+OPENAI_API_KEY= 
+SECRET_KEY=django secret key
+GODADDY_PASS=godaddy account password
+PRODUCTION_DOCS_PATH=/home/username/DjangoDocoApp/DocumentAi - ubuntu
+PROD_PATH=/home/username/DjangoDocoApp/DocumentAi/python_language_model/MVP/ - ubuntu
+DEV_PATH=python_language_model/MVP/
+LOCAL_DEVICE_ADDRESS=your device address in local network
+PROD_FULL_VERSION_PATH=/home/username/DjangoDocoApp/DocumentAi/python_language_model/fullVersion/
+DEV_FULL_VERSION_PATH=python_language_model/fullVersion/

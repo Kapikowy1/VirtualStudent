@@ -1,0 +1,76 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>Warunki użytkowania - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/termsOfUse.css' %}">
+</head>
+
+<header class="header">
+
+    <div class="wrapper">
+        
+        <h1>Składzik na projekty</h1>
+
+        <div style='width:100%; height:100%;  display:flex; flex-direction:row; '>
+            <div style='width:30%'> </div>
+            <div style="width:70%; display:flex; flex-direction:column;border:1px solid black; padding:10px"> 
+                <div>
+                    <p>Kontener na prace MVP</p>
+
+                    
+                    {% for topic in topic_list_MVP%}
+                
+                        <form action="{% url 'download_MVP' %}" method="post">
+                            {% csrf_token %}
+
+                            <input type="hidden" id="download_MVP_hidden"  name="download_MVP_hidden" value={{topic}}>
+                            <div style="display: flex; align-items: center; gap: 10px; justify-content:space-between;">
+                                <span>{{topic}}</span>
+                                <button>Pobierz</button>
+                            </div>
+                        </form>
+                    {% endfor%}
+
+
+                </div>
+                <div>
+                    <p>Kontener na prace full wersja</p>
+
+                    {% for topic in topic_list_full%}
+                
+                        <form action="{% url 'download_full' %}" method="post">
+                            {% csrf_token %}
+
+                            <input type="hidden" id="download_full_hidden" name="download_full_hidden" value={{topic}}>
+                            <div style="display: flex; align-items: center; gap: 10px; justify-content:space-between;">
+                                <span>{{topic}}</span>
+                                <button>Pobierz</button>
+                            </div>
+                        </form>
+                    {% endfor%}
+                   
+                </div>
+            </div>
+            
+          
+
+        </div>
+
+       
+    </div>
+</header>
+
+<script>
+    console.log(topic_list_MVP,topic_list_full)
+
+</script>
+
+<section>
+   
+</section>
+
+
+
+{% endblock content %}

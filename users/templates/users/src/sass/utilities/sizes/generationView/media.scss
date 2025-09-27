@@ -1,0 +1,34 @@
+@media (min-width: 450px) {
+	.generationView {
+		h2 {
+			margin-top: 2em;
+		}
+
+		&__box {
+			&-text {
+				font-size: 2.2rem;
+			}
+		}
+
+		button,
+		a {
+			font-size: 2rem;
+		}
+	}
+
+	
+}
+
+@media (min-width: 1020px) {
+	.generationView {
+		&__box {
+			&-text {
+				font-size: 3.2rem;
+			}
+		}
+		button,
+		a {
+			font-size: 3rem;
+		}
+	}
+}

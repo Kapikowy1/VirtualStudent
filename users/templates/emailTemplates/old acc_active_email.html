@@ -1,0 +1,380 @@
+{% load static %}
+{% block content %}
+{% autoescape off %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&family=Oswald:wght@300;700&family=Roboto:wght@300;700&display=swap"
+        rel="stylesheet">
+
+    <style>
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+            background-color: #1882b8;
+            overflow-x: hidden
+        }
+
+        a,
+        html {
+            color: #e0e0ff
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        a:focus {
+            outline: dashed
+        }
+
+        li {
+            list-style: none
+        }
+
+        button {
+            font-family: Roboto, sans-serif;
+            border: none;
+            cursor: pointer;
+            background-color: #e0e0ff;
+            font-weight: 700;
+            font-size: 1.5rem;
+            padding: .5em;
+            border-radius: 20px;
+            transition: background-color .5s ease
+        }
+
+        button:focus,
+        button:hover {
+            background-color: #24fcfc;
+            outline: none
+        }
+
+        body {
+            font-family: Nunito, sans-serif;
+            font-weight: 300
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: Roboto, sans-serif;
+            font-weight: 700
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 100%;
+            max-width: 1200px
+        }
+
+        .section-heading {
+            position: relative;
+            margin-top: .5em;
+            margin-bottom: .5em;
+            font-size: 3.1rem;
+            text-transform: uppercase;
+            text-align: center;
+            letter-spacing: 2px
+        }
+
+        @media (min-width:700px) {
+            .section-heading {
+                font-size: 4.5rem;
+                margin-bottom: 1em
+            }
+        }
+
+        .section-padding {
+            padding: 4em 2em
+        }
+
+        .header__logo {
+            top: 0;
+            width: 100%;
+            height: 7rem;
+            background-color: #a0ace4
+        }
+
+        .header__logo img {
+            height: 100%;
+            padding: .5em
+        }
+
+        .footer {
+            display: flex;
+            text-align: center
+        }
+
+        .footer h1 {
+            text-transform: none
+        }
+
+        .footer__icons {
+            display: flex;
+            justify-content: center
+        }
+
+        .footer-icon {
+            position: relative;
+            display: flex
+        }
+
+        .footer-icon:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            transition: opacity 1s ease;
+            opacity: 0;
+            z-index: -1
+        }
+
+        .footer-icon:hover:before {
+            opacity: 1
+        }
+
+        .footer-icon a {
+            padding: .2em 1.5em;
+            display: block;
+            width: 100%;
+            transition: color .3s
+        }
+
+        .footer-icon a:hover {
+            color: #000;
+            width: 100%
+        }
+
+        .footer-icon a svg {
+            width: 6rem;
+            height: 6rem
+        }
+
+        .footer-icon:hover .footer__tooltip {
+            visibility: visible;
+            opacity: 1;
+            top: -80%
+        }
+
+        .footer__tooltip {
+            position: absolute;
+            left: 50%;
+            top: -180%;
+            transform: translateX(-50%);
+            background-color: #000;
+            color: #e0e0ff;
+            white-space: nowrap;
+            padding: 10px 15px;
+            border-radius: 7px;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 1.5s ease, top 2s ease;
+            font-size: 1.7rem
+        }
+
+        .footer__tooltip:before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 85%;
+            transform: translateX(-50%) rotate(45deg);
+            border: 7px solid;
+            border-color: #000
+        }
+
+        .footer__bottom-text {
+            margin: .5em 0;
+            font-size: 1.5rem
+        }
+
+        @media (min-width:700px) {
+            .footer__icons {
+                margin-top: -1.5em
+            }
+
+            .footer-icon a {
+                padding: .2em 1em
+            }
+        }
+
+        @media (min-width:800px) {
+            .footer {
+                font-size: 2rem
+            }
+        }
+
+        .header {
+            display: flex;
+            flex-direction: column;
+            text-align: center
+        }
+
+        .header__thanks h1 {
+            text-transform: none
+        }
+
+        .header-text {
+            font-size: 1.5rem;
+            padding: .8em;
+            margin-top: -.5em;
+            margin-bottom: .7em
+        }
+
+        .header-btn {
+            margin-top: 1em;
+            padding: .4em 1em;
+            font-size: 1.8rem;
+            background: #e0e0ff;
+            border-radius: 15px;
+            color: #232323;
+            font-weight: 700;
+            position: relative;
+            transition: background-color .1s;
+            overflow: hidden;
+            z-index: 3
+        }
+
+        @media (min-width:330px) {
+            .header-text {
+                font-size: 1.8rem
+            }
+        }
+
+        @media (min-width:415px) {
+            .header-text {
+                font-size: 2rem
+            }
+        }
+
+        @media (min-width:530px) {
+            .header-text {
+                font-size: 2rem
+            }
+
+            .header-btn {
+                font-size: 2.5rem
+            }
+        }
+
+        @media (min-width:700px) {
+            .header-text {
+                margin-top: -1.7em
+            }
+
+            .header-btn {
+                font-size: 3.5rem
+            }
+        }
+
+        @media (min-width:860px) {
+            .header-text {
+                font-size: 2.7rem
+            }
+        }
+
+        @media (min-width:1020px) {
+            .header-text {
+                font-size: 3rem
+            }
+
+            .header-btn {
+                font-size: 3.5rem
+            }
+        }
+    </style>
+
+</head>
+
+<main>
+
+    <header class="header">
+
+        <div class="header__logo">
+            <img src="../../static/img/tree.png" alt="logo">
+        </div>
+
+        <div class="header__thanks">
+
+            <div class="wrapper">
+                <h1 class="section-heading">Dziękujemy {{user.username}}, <br />że do nas dołączyłeś!
+                </h1>
+
+                <p class="header-text">Proszę kliknąć poniższy przycisk, aby skorzystać z naszych usług.</p>
+
+                <a href="http://{{domain}}{% url 'activate' uidb64=uid token=token %}" class="header-btn" tabindex="0">
+                    Potwierdź adres e-mail
+                </a>
+            </div>
+        </div>
+
+    </header>
+
+    <footer class="footer">
+
+        <div class="wrapper">
+
+            <div>
+                <h1 class="section-heading">Odwiedź nas!</h1>
+            </div>
+
+            <div class="footer__icons">
+                <div class="footer-icon">
+                    <a href="https://youtube.com/@nhardwork?si=cZNTZFIHiSYi7mNm" target="_blank" rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+                            <path d="M10 9l5 3l-5 3z" />
+                        </svg>
+                        <span class="footer__tooltip">Youtube</span>
+                    </a>
+                </div>
+                <div class="footer-icon">
+                    <a href="https://www.tiktok.com/@nhardwork?is_from_webapp=1&sender_device=pc" target="_blank"
+                        rel="noopener">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok">
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path
+                                d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" />
+                        </svg>
+                        <span class="footer__tooltip">Tiktok</span>
+                    </a>
+                </div>
+
+            </div>
+
+            <p class="footer__bottom-text">&copy; !hardWork <span class="footer__year"></span> </p>
+        </div>
+
+    </footer>
+
+
+
+    <script src="{% static 'js/base/footer.js' %}"></script>
+</main>
+
+
+{% endautoescape %}
+{% endblock content %}

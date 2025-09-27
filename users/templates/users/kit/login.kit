@@ -1,0 +1,51 @@
+{% extends "users/base.html" %}
+{% load static %}
+{% block content %}
+
+<head>
+    <title>LOGIN - !hardWork</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'users/login.css' %}">
+</head>
+
+
+<header class="login">
+
+
+    <div class="wrapper">
+
+        <form class="login-form" action="{% url 'login_auth' %}" method="post">
+
+            {% csrf_token %}
+
+            <h2 class="section-heading">Logowanie</h2>
+
+            <div class="login__box">
+                <label for="id_username">Nazwa użytkownika:</label>
+                <input type="text" id="id_username" name="username" required pattern="[a-zA-Z0-9]+" required
+                    minlength="3" maxlength="15" placeholder="Podaj nazwę użytkownika"
+                    title="Uzupełnij nazwę użytkownika">
+                <p class="login__box-errorText">Error</p>
+            </div>
+
+            <div class="login__box">
+                <label for="id_password">Hasło:</label>
+                <input type="password" id="id_password" name="password" required minlength="6" maxlength="25"
+                    placeholder="Podaj hasło" title="Uzupełnij hasło">
+                <p class="login__box-errorText">Error</p>
+            </div>
+
+            <button type="submit">Zaloguj się</button>
+
+            <div class="login__bottom">
+                <p>Pierwszy raz tutaj?</p>
+                <a href="{% url 'register_view' %}" tabindex="0">Zarejestruj się</a>
+            </div>
+        </form>
+
+    </div>
+
+</header>
+
+<script src="{% static 'js/login/loginErrorHandler.js' %}"></script>
+
+{% endblock content %}

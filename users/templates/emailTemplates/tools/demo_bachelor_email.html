@@ -1,0 +1,55 @@
+<!-- {% block content %}
+{% autoescape off %}
+ -->
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&family=Oswald:wght@300;700&family=Roboto:wght@300;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="./dist/css/demo_bachelor_email.css">
+
+</head>
+
+<main>
+
+    <div class="wrapper">
+
+        <table>
+
+            <tr>
+    <div class="logo" target="_blank" rel="noopener">
+        <a href="https://www.nhardwork.com/" class="section-heading">
+            !hardWork
+        </a>
+    </div>
+</tr>
+
+            <tr>
+                <div class="thanks">
+
+                    <h1 class="section-heading">Witaj {{user.username}},
+                    </h1>
+
+
+                    <p class="thanks-text">Oto wersja demonstracyjna Twojej pracy. Dziękuję za cierpliwość.
+                        Teraz możesz czerpać inspiracje bez ograniczeń.</p>
+
+
+                </div>
+            </tr>
+
+            <tr>
+    <p class="footer">&copy; !hardWork 2024</p>
+</tr>
+        </table>
+    </div>
+
+</main>
+
+</html>
+<!-- 
+{% endautoescape %}
+{% endblock content %} -->

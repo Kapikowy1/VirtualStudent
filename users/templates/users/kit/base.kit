@@ -1,0 +1,252 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+    content="!hardWork - Nasz inteligentny asystent naukowy to nowoczesne narzędzie, które usprawnia proces tworzenia prac naukowych. Nasza platforma oferuje możliwość spersonalizowanego podejścia dostosowując treść pracy do wprowadzonego przez użytkownika tematu oraz celu.">
+  <link rel="icon" type="image/x-icon" href="../../static/img/logo.webp">
+  <meta property="og:title" content="!hardWork">
+  <meta property="og:description"
+    content="!hardWork - Nasz inteligentny asystent naukowy to nowoczesne narzędzie, które usprawnia proces tworzenia prac naukowych. Nasza platforma oferuje możliwość spersonalizowanego podejścia dostosowując treść pracy do wprowadzonego przez użytkownika tematu oraz celu.">
+  <meta property="og:image" content="../../static/img/logo.webp">
+  <meta property="og:url" content="https://www.nhardwork.com/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="AI, inteligentny asystent naukowy, tworzenie prac, spersonalizowane, cel, temat">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;700&family=Oswald:wght@300;700&family=Roboto:wght@300;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" type="text/css" href="{% static 'users/main.css' %}">
+</head>
+
+<body>
+
+
+
+  <main>
+
+    <nav class="nav">
+
+      <div class="nav__containter wrapper">
+        <div class="nav__leftBox">
+          <div class="nav__leftBox-logo">
+            <a href="{% url 'home_view' %}" tabindex="0">
+              <img src="../../static/img/logo_nav.webp" alt="Home">
+            </a>
+          </div>
+          <div class="nav__leftBox-burger">
+            <button>
+              <span class="nav__leftBox-burger--textInfo">Pasek nawigacji aplikacji</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#e0e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-menu-2">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M4 6l16 0" />
+                <path d="M4 12l16 0" />
+                <path d="M4 18l16 0" />
+              </svg>
+            </button>
+          </div>
+
+        </div>
+        <div class="nav__rightBox">
+          {% if user.is_authenticated %}
+          <div class="nav__rightBox-account {% if not user.is_active %} nav__rightBox-account--alert {% endif %}">
+            <button>
+              <span class="nav__rightBox-account--textInfo">Pasek nawigacji konta</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="#e0e0ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="icon icon-tabler icons-tabler-outline icon-tabler-user">
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+                <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+              </svg>
+            </button>
+          </div>
+          {% endif %}
+        </div>
+      </div>
+
+
+      <div class="nav__secondContainer wrapper">
+
+
+
+        <div class="nav__leftPanel">
+          <div class="nav__leftPanelNav">
+            {% if not user.is_authenticated %}
+            <a href="{% url 'login_view' %}" tabindex="0">Logowanie</a>
+            <a href="{% url 'register_view' %}" tabindex="0">Rejestracja</a>
+            {% endif %}
+            {% if user.is_authenticated %}
+            <a href="{% url 'dashboard_view' %}" tabindex="0">Tworzenie projektu</a>
+            {% endif %}
+            <!-- <a href="{% url 'creators_view' %}" tabindex="0">Twórcy</a> -->
+          </div>
+          <div class="nav__leftPanelSocials">
+            <div class="nav__leftPanelSocials-icon">
+              <a href="https://youtube.com/@nhardwork?si=cZNTZFIHiSYi7mNm" target="_blank" rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube" aria-hidden="true">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+                  <path d="M10 9l5 3l-5 3z" />
+                </svg>
+                <p>Youtube</p>
+              </a>
+            </div>
+            <div class="nav__leftPanelSocials-icon">
+              <a href="https://www.tiktok.com/@nhardwork?is_from_webapp=1&sender_device=pc" target="_blank"
+                rel="noopener">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                  stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok" aria-hidden="true">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path
+                    d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" />
+                </svg>
+                <p>Tiktok</p>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {% if user.is_authenticated %}
+        <div class="nav__rightPanel">
+
+          <p class="nav__rightPanel-nickname">{{user.username}}</p>
+          {% if not user.is_active %}
+          <div class="nav__rightPanel-confirmAllert">
+
+            <p>Email nie został potwierdzony.</p>
+            <p>Wiadomość wysłano na: </p>
+
+            <div class="nav__rightPanel-email">
+
+              <input class="nav__rightPanel-getEmail" type="password" value="{{user.email}}" readonly>
+              <button>
+                <svg id="emailToggle-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                  fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                  class="icon icon-tabler icons-tabler-outline icon-tabler-eye">
+                  <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                  <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+                  <path d="M21 12c-2.4 4 -5.4 6 -9 6c-3.6 0 -6.6 -2 -9 -6c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6" />
+                </svg>
+              </button>
+            </div>
+
+          </div>
+          {% endif %}
+          <p class="nav__rightPanel-text">Pozostałe projekty do wygenerowania:
+            </br><span>{{user.generation_quantity}}</span>
+          </p>
+
+          <a href="{% url 'logout_auth' %}">Wyloguj</a>
+
+        </div>
+        {% endif %}
+
+      </div>
+
+    </nav>
+
+    <div class="container">
+      {% block content %}{% endblock %}
+
+    </div>
+
+    {% if error_msg|default:"" %}
+    <div class="errorMessage">
+      <p>{{ error_msg }}</p>
+      <div class="errorMessage-btn">
+        <button>
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            class="icon icon-tabler icons-tabler-outline icon-tabler-x">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+            <path d="M18 6l-12 12" />
+            <path d="M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+    {% endif %}
+
+  </main>
+
+
+  <footer class="footer">
+
+    <div class="wrapper">
+
+      <div>
+        <h1 class="section-heading">Odwiedź nas!</h1>
+      </div>
+
+      <div class="footer__icons">
+        <div class="footer-icon">
+          <a href="https://youtube.com/@nhardwork?si=cZNTZFIHiSYi7mNm" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-brand-youtube" aria-hidden="true">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M2 8a4 4 0 0 1 4 -4h12a4 4 0 0 1 4 4v8a4 4 0 0 1 -4 4h-12a4 4 0 0 1 -4 -4v-8z" />
+              <path d="M10 9l5 3l-5 3z" />
+            </svg>
+            <span class="footer__tooltip" aria-hidden="true">Youtube</span>
+            <span class="footer-icon--textInfo">Youtube</span>
+          </a>
+        </div>
+        <div class="footer-icon">
+          <a href="https://www.tiktok.com/@nhardwork?is_from_webapp=1&sender_device=pc" target="_blank" rel="noopener">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-brand-tiktok" aria-hidden="true">
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path
+                d="M21 7.917v4.034a9.948 9.948 0 0 1 -5 -1.951v4.5a6.5 6.5 0 1 1 -8 -6.326v4.326a2.5 2.5 0 1 0 4 2v-11.5h4.083a6.005 6.005 0 0 0 4.917 4.917z" />
+            </svg>
+            <span class="footer__tooltip" aria-hidden="true">Tiktok</span>
+            <span class="footer-icon--textInfo">Tiktok</span>
+          </a>
+        </div>
+
+      </div>
+
+      <p class="footer__bottom-text">&copy; !hardWork <span class="footer__year"></span> </p>
+    </div>
+
+  </footer>
+
+  <script src="{% static 'js/base/nav.js' %}"></script>
+  <script src="{% static 'js/base/footer.js' %}"></script>
+
+  {% if not user.is_authenticated %}
+  <script src="{% static 'js/base/leftNav.js' %}"></script>
+  {% endif %}
+
+  {% if error_msg|default:"" %}
+  <script src="{% static 'js/base/errorMessagePopup.js' %}"></script>
+  {% endif %}
+
+  {% if user.is_authenticated %}
+  <script src="{% static 'js/base/rightNav.js' %}"></script>
+  <script src="{% static 'js/base/leftNavLogged.js' %}"></script>
+  {% if not user.is_active %}
+  <script src="{% static 'js/base/showEmail.js' %}"></script>
+  {% endif %}
+  {% endif %}
+</body>
+
+</html>

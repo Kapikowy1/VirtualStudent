@@ -1,0 +1,126 @@
+@use './utilities/colors';
+@use './utilities/mixins';
+
+.nav {
+	&__logged {
+		&-item {
+			&--dashboard {
+				background-color: colors.$main_color;
+				color: colors.$white;
+
+				&:focus {
+					outline: colors.$dark dashed;
+				}
+			}
+		}
+	}
+}
+
+.dashboard {
+	@include mixins.heroImages;
+	@include mixins.registerLogin;
+
+	&-btn {
+		margin-bottom: 1em;
+	}
+
+	&__tooltip {
+		&-icon {
+			width: 1.8rem;
+			height: 1.8rem;
+		}
+
+		&-text {
+			position: absolute;
+			width: 75%;
+			left: 50%;
+
+			text-align: center;
+			padding: 0.7em;
+			transform: translateX(-50%);
+			background-color: colors.$white;
+			border-radius: 5px;
+			border: 3px solid colors.$main_color;
+			visibility: hidden;
+			opacity: 0;
+			transition: opacity 0.5s ease;
+
+			&--topic {
+				font-size: 1.3rem;
+				margin-top: -8.5rem;
+			}
+
+			&--purpose {
+				font-size: 0.95rem;
+				margin-top: -31.5rem;
+
+				ul {
+					margin-top: 0.5em;
+					padding-left: 1rem;
+
+					li {
+						text-align: start;
+						padding-bottom: 0.3rem;
+
+						&::before {
+							content: '• '; /* Kropka */
+							color: colors.$dark; /* Kolor kropki */
+						}
+					}
+				}
+			}
+
+			&--show {
+				visibility: visible;
+				opacity: 1;
+			}
+		}
+	}
+
+	textarea {
+		min-height: 10rem;
+	}
+
+	.textarea {
+		&-topic {
+			max-height: 13rem;
+		}
+
+		&-purpose {
+			max-height: 25rem;
+		}
+	}
+
+	.dashboard__box .dashboard__box-errorText {
+		font-size: 1rem;
+		// visibility: hidden;
+
+		font-weight: bold;
+	}
+
+	.dashboard__box--error {
+		.dashboard__box-errorText {
+			color: colors.$red;
+		}
+
+		textarea {
+			border: 2px solid colors.$red;
+			background-color: colors.$red_field;
+			color: colors.$dark;
+
+			&::placeholder {
+				color: colors.$dark;
+			}
+		}
+	}
+
+	&__box-errorText--black {
+		color: colors.$dark;
+	}
+
+	&__box-errorText--red {
+		color: colors.$red;
+	}
+}
+
+@import './utilities/sizes/dashboard/media.scss';
