@@ -9,5 +9,7 @@ node_modules/
 custom_config.py
 
 debug.log
+info.log
+
 
 db.sqlite3
