@@ -1,4 +1,5 @@
 Virtual Student 🎓
+Repozytorium w okresie prac dostosowania do użytku jako repozytorium publiczne.
 Repozytorium zawiera projekt wirtualnego studenta, który służy jako źródło inspiracji podczas pisania prac magisterskich i licencjackich.
 Celem jest stworzenie narzędzia wspierającego proces twórczy – od generowania pomysłów, przez strukturyzowanie treści, po szukanie literatury i przykładów.
 
